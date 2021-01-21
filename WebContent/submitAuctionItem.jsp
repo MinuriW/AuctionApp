@@ -6,23 +6,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submit Auction Item</title>
-    <script type="text/javascript" src="submitAuctionItem.js"></script>
+    <script  type="text/javascript" src="submitAuctionItem.js" defer></script>
 </head>
 <body>
     <div>
         <form action="#" method="POST" enctype="multipart/form-data">
             <label for="title">Title</label>
-            <input name="title" type="text" /><br>
+            <input id='title' name="title" type="text" onchange="validateTitle()" /><br>
             <label for="condition">Condition</label>
-            <input name="condition" type="text" /><br>
+            <input id='condition' name="condition" type="text" onchange="validateCondition()"/><br>
             <label for="photo">Photo</label>
-            <input name="photo" type="file" /><br>
+            <input id='photo' name="photo" type="file" onchange="validatePhoto()"/><br>
             <label for="timePeriod">Time period</label>
-            <input name="timePeriod" type="number" /><br>
+            <input id='timePeriod' name="timePeriod" type="number" onchange="validateTimePeriod()" /><br>
             <label for="startingPrice">Starting Price</label>
-            <input name="startingPrice" type="number" /><br>
-            <input type="submit" value="Submit Item" />
+            <input id='startingPrice' name="startingPrice" type="number" onchange="validateStartingPrice()" /><br>
+            <input id='submit' type="submit" value="Submit Item" />
         </form>
     </div>
+    
 </body>
 </html>
