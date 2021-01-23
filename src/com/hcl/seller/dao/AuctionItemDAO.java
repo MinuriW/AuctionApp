@@ -8,6 +8,7 @@ public interface AuctionItemDAO {
 			String title, 
 			String condition, 
 			Date startDate,
+			Date endDate,
 			Double startingPrice,
 			InputStream photoStream );
 }
