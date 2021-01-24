@@ -10,7 +10,7 @@
 </head>
 <body>
     <div>
-        <form action="#" method="POST" enctype="multipart/form-data">
+        <form action="submitAuctionItem" method="POST" enctype="multipart/form-data">
             <label for="title">Title</label>
             <input id='title' name="title" type="text" onchange="validateTitle()" /><br>
             <label for="condition">Condition</label>
@@ -18,9 +18,9 @@
             <label for="photo">Photo</label>
             <input id='photo' name="photo" type="file" onchange="validatePhoto()"/><br>
             <label for="timePeriod">Time period</label>
-            <input id='timePeriod' name="timePeriod" type="number" onchange="validateTimePeriod()" /><br>
+            <input id='timePeriod' name="timePeriod" type="text" onchange="validateTimePeriod()" /><br>
             <label for="startingPrice">Starting Price</label>
-            <input id='startingPrice' name="startingPrice" type="number" onchange="validateStartingPrice()" /><br>
+            <input id='startingPrice' name="startingPrice" type="text" onchange="validateStartingPrice()" /><br>
             <input id='submit' type="submit" value="Submit Item" />
         </form>
     </div>
