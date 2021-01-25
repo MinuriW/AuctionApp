@@ -21,17 +21,8 @@ import com.hcl.seller.AuctionItemServiceImpl;
 
 @MultipartConfig(fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5)
 @WebServlet("/submitAuctionItem")
-public class SubmitAuctionItemServlet extends HttpServlet {
+public class SubmitAuctionItemServlet extends AbstractAuctionItemServlet {
 
-	private AuctionItemService auctionItemService;
-	@Override
-	public void init() throws ServletException {
-		// TODO Auto-generated method stub
-		super.init();
-		
-		String resourcePath = getServletContext().getRealPath("");
-		auctionItemService = new AuctionItemServiceImpl(resourcePath);
-	}
 
 	private static String getParameterValue(HttpServletRequest request, String paramter)
 			throws IOException, ServletException {
@@ -55,7 +46,7 @@ public class SubmitAuctionItemServlet extends HttpServlet {
 		Double startingPrice = Double.parseDouble(getParameterValue(request, "startingPrice"));
 		InputStream photo = request.getPart("photo").getInputStream();
 
-		Boolean isInserted = auctionItemService.submitAuctionItem(title, condition, timePeriod, startingPrice,
+		Boolean isInserted = getAuctionItemService().submitAuctionItem(title, condition, timePeriod, startingPrice,
 				photo);
 		
 		System.out.println(isInserted);
