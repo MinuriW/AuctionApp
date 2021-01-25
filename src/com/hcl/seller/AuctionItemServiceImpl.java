@@ -3,9 +3,11 @@ package com.hcl.seller;
 import java.io.InputStream;
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.List;
 
 import com.hcl.seller.dao.AuctionItemDAO;
 import com.hcl.seller.dao.AuctionItemDAOImpl;
+import com.hcl.seller.domain.AuctionItem;
 import com.hcl.seller.util.PhotoManager;
 import com.hcl.seller.util.PhotoManagerImpl;
 
@@ -38,6 +40,12 @@ public class AuctionItemServiceImpl implements AuctionItemService {
 		
 		return auctionItemDAO.insertAuctionItem(title, condition, startDate, endDate, startingPrice, photoURL);
 
+	}
+
+	@Override
+	public List<AuctionItem> getAllAuctionItems() {
+		
+		return auctionItemDAO.getAllAuctionItems();
 	}
 
 }
