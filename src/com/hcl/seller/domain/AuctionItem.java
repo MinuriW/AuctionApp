@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 
 public class AuctionItem {
 	private Integer id;
+	private String title;
 	private String condition;
 	private Timestamp startDate;
 	private Timestamp endDate;
@@ -14,15 +15,24 @@ public class AuctionItem {
 		super();
 	}
 
-	public AuctionItem(Integer id, String condition, Timestamp startDate, Timestamp endDate, Double startingPrice,
-			String photoURL) {
+	public AuctionItem(Integer id, String title, String condition, Timestamp startDate, Timestamp endDate,
+			Double startingPrice, String photoURL) {
 		super();
 		this.id = id;
+		this.title = title;
 		this.condition = condition;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.startingPrice = startingPrice;
 		this.photoURL = photoURL;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public Integer getId() {
