@@ -15,4 +15,6 @@ public interface AuctionItemDAO {
 			String photoURL );
 	
 	public List<AuctionItem> getAllAuctionItems();
+	
+	public List<AuctionItem> getAuctionItemsByTitle(String titleToSearch);
 }
