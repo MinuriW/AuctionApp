@@ -40,7 +40,7 @@
 					<form method="POST">
 					
 						<div class="form-group">
-						<h2 class="card-heading">Publish item</h2>
+						<h2 class="card-heading">Submit item</h2>
 							    <input required class="form-control" type="text" placeholder="Title"name="Title"><br> 
 								<input required class="form-control" type="text" placeholder="Item Condition" name="itemcondition"><br> 
 								<input required class="form-control" type="text" placeholder="Item Description" name="itemdescription"><br>
@@ -73,7 +73,7 @@
 							<!-- row -->
 						</div>
 						<div class="p-t-30">
-							<button class="btn btn--radius btn--green" type="submit">Publish
+							<button class="btn btn--radius btn--green" type="submit">Submit
 								Item</button>
 						</div>
 					</form>
