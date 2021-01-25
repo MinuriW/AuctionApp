@@ -48,4 +48,10 @@ public class AuctionItemServiceImpl implements AuctionItemService {
 		return auctionItemDAO.getAllAuctionItems();
 	}
 
+	@Override
+	public List<AuctionItem> getAuctionItemsByTitle(String titleToSearch) {
+		
+		return auctionItemDAO.getAuctionItemsByTitle(titleToSearch);
+	}
+
 }
