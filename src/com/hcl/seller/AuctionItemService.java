@@ -16,4 +16,6 @@ public interface AuctionItemService {
 			InputStream photo );
 	
 	public List<AuctionItem> getAllAuctionItems();
+
+	public List<AuctionItem> getAuctionItemsByTitle(String titleToSearch);
 }
