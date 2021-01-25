@@ -16,6 +16,7 @@ import com.hcl.util.DbConnectionImpl;
 public class AuctionItemDAOImpl implements AuctionItemDAO {
 	private static final String INSERT_AUCTION_ITEM = "INSERT INTO auction_item VALUES( auction_item_id_seq.NEXTVAL, ?, ?, ?, ?, ?, ? )";
 	private static final String SELECT_ALL_AUCTIONS = "SELECT * FROM auction_item WHERE end_date > SYSDATE";
+	private static final String SELECT_ALL_AUCTIONS_BY_TITLE = "SELECT * FROM auction_item WHERE title LIKE ?";
 	
 	private DbConnection dbConnection;
 
@@ -118,6 +119,67 @@ public class AuctionItemDAOImpl implements AuctionItemDAO {
 			
 			if(stmt != null) {
 				stmt.close();
+			}
+			
+			if(con != null) {
+				con.close();
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return auctionItems;
+	}
+
+	@Override
+	public List<AuctionItem> getAuctionItemsByTitle(String titleToSearch) {
+		Connection con = null;
+		PreparedStatement pmt = null;
+		ResultSet rs = null;
+		
+		List<AuctionItem> auctionItems = null;
+		
+		try {
+			con = dbConnection.getConnection();
+			
+			pmt = con.prepareStatement(SELECT_ALL_AUCTIONS_BY_TITLE);
+			
+			rs = pmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				Integer id = rs.getInt(1);
+				String title = rs.getString(2);
+				String condition = rs.getString(3);
+				Timestamp startDate = rs.getTimestamp(4);
+				Timestamp endDate = rs.getTimestamp(5);
+				Double startingPrice = rs.getDouble(6);
+				String photoURL =rs.getString(7);
+				
+				AuctionItem auctionItem = new AuctionItem(id, title, condition, startDate, endDate, startingPrice, photoURL);
+				
+				if(auctionItems == null) {
+					auctionItems = new ArrayList<>();
+				}
+				
+				auctionItems.add(auctionItem);
+				
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		// Closing all the Resources
+		try {
+			if(rs != null) {
+				rs.close();
+			}
+			
+			if(pmt != null) {
+				pmt.close();
 			}
 			
 			if(con != null) {
