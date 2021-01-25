@@ -145,6 +145,7 @@ public class AuctionItemDAOImpl implements AuctionItemDAO {
 			con = dbConnection.getConnection();
 			
 			pmt = con.prepareStatement(SELECT_ALL_AUCTIONS_BY_TITLE);
+			pmt.setString(1, "%" + titleToSearch + "%");
 			
 			rs = pmt.executeQuery();
 			
