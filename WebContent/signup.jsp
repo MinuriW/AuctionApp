@@ -26,8 +26,8 @@
         <h1>Signup</h1>
 
         <form class="form">
-            <input required id="first" type="text" placeholder="First name">
-            <input required type="text" name="last" placeholder="Last name">
+            <input required type="text" name="firstname" placeholder="First name">
+            <input required type="text" name="lastname" placeholder="Last name">
             <input required type="email" name="email" placeholder="Email">
             <input required type="password" name="password" placeholder="Password">
             <button type="submit" id="signup-button">Signup</button>

@@ -22,4 +22,6 @@ public class UserServiceImpl implements UserService{
 		return userDAO.insertUser(firstName, lastName, email, password);
 	}
 	
+	
+	
 }
