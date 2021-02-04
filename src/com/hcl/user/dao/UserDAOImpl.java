@@ -71,7 +71,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public Boolean insertUser(String firstName, String lastName, String email, String password) {
+	public Boolean insertUser(String username, String firstName, String lastName, String email, String password) {
 		Connection con = null;
 		PreparedStatement pmt = null;
 
