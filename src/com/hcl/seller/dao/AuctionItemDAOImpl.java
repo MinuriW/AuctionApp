@@ -10,6 +10,11 @@ public class AuctionItemDAOImpl implements AuctionItemDAO {
 		return false;
 	}
 
+	@Override
+	public AuctionItem getAuctionItemById(int id) {
+		return null;
+	}
+
 	
 
 }
