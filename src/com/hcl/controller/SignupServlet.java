@@ -18,6 +18,7 @@ public class SignupServlet extends AbstractUserServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		String username = request.getParameter("username");
 		String firstName = request.getParameter("firstname");
 		String lastName = request.getParameter("lastname");
 		String email = request.getParameter("email");
@@ -28,7 +29,7 @@ public class SignupServlet extends AbstractUserServlet {
 		Boolean isValidEmail = userService.checkEmail(email);
 
 		if (isValidEmail) {
-			Boolean isSignedUp = userService.signupUser(firstName, lastName, email, password);
+			Boolean isSignedUp = userService.signupUser(username, firstName, lastName, email, password);
 
 			if (isSignedUp) {
 				RequestDispatcher rs = request.getRequestDispatcher("login.jsp");
