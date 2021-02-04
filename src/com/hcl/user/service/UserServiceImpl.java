@@ -18,8 +18,8 @@ public class UserServiceImpl implements UserService{
 		return user==null;
 	}
 	
-	public Boolean signupUser(String firstName, String lastName, String email, String password) {
-		return userDAO.insertUser(firstName, lastName, email, password);
+	public Boolean signupUser(String username, String firstName, String lastName, String email, String password) {
+		return userDAO.insertUser(username, firstName, lastName, email, password);
 	}
 	
 	
