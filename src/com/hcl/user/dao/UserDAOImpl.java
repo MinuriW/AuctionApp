@@ -41,7 +41,7 @@ public class UserDAOImpl implements UserDAO {
 				String email1 = rs.getString(4);
 				String password = rs.getString(5);
 
-				User u = new User(id, firstName, lastName, email1, password);
+				// TODO: get user by the email
 
 			}
 
