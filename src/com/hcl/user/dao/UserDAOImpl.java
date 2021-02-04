@@ -5,15 +5,20 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
 import com.hcl.user.domain.User;
 import com.hcl.util.DbConnection;
 import com.hcl.util.DbConnectionImpl;
+import com.hcl.util.HibernateUtil;
 
 public class UserDAOImpl implements UserDAO {
 
-	private static final String SELECT_USER_BY_EMAIL = "SELECT * FROM auction_item WHERE email=?";
-	private static final String INSERT_USER = "INSERT INTO \"user\" VALUES (user_id_seq.NEXTVAL, ?, ?, ?, ?)";
-
+	//private static final String SELECT_USER_BY_EMAIL = "SELECT * FROM auction_item WHERE email=?";
+	//private static final String INSERT_USER = "INSERT INTO \"user\" VALUES (user_id_seq.NEXTVAL, ?, ?, ?, ?)";
+	SessionFactory sessionFactory = HibernateUtil.geSessionFactory();
 	private DbConnection dbConnection;
 
 	public UserDAOImpl() {
@@ -23,95 +28,34 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public User getUserByEmail(String email) {
-		Connection con = null;
-		PreparedStatement pmt = null;
-		ResultSet rs = null;
+		Session session=sessionFactory.getCurrentSession();
+        session.beginTransaction();
+        User user=(User)session.get(User.class,email);
+        session.getTransaction().commit();
+        return user;
 
-		User user = null;
-		try {
-			con = dbConnection.getConnection();
-			pmt = con.prepareStatement(SELECT_USER_BY_EMAIL);
-			pmt.setString(1, email);
-			rs = pmt.executeQuery();
 
-			if (rs.next()) {
-				Integer id = rs.getInt(1);
-				String firstName = rs.getString(2);
-				String lastName = rs.getString(3);
-				String email1 = rs.getString(4);
-				String password = rs.getString(5);
-
-				// TODO: get user by the email
-
-			}
-
-		} catch (ClassNotFoundException | SQLException e) {
-
-			e.printStackTrace();
-		}
-
-		try {
-			if (rs != null) {
-				rs.close();
-			}
-
-			if (pmt != null) {
-				pmt.close();
-			}
-
-			if (con != null) {
-				con.close();
-			}
-		} catch (SQLException e) {
-
-			e.printStackTrace();
-		}
-
-		return user;
 	}
 
 	@Override
 	public Boolean insertUser(String username, String firstName, String lastName, String email, String password) {
-		Connection con = null;
-		PreparedStatement pmt = null;
 
-		int affectedRows = 0;
-		try {
-			con = dbConnection.getConnection();
 
-			pmt = con.prepareStatement(INSERT_USER);
+		Session session = sessionFactory.openSession();
 
-			pmt.setString(1, firstName);
-			pmt.setString(2, lastName);
-			pmt.setString(3, email);
-			pmt.setString(4, password);
+		session.beginTransaction();
 
-			affectedRows = pmt.executeUpdate();
-
-		} catch (ClassNotFoundException | SQLException e) {
-
-			e.printStackTrace();
-		}
+		boolean isSaved = true;
 
 		try {
-			if (pmt != null) {
-				pmt.close();
-			}
-
-			if (con != null) {
-				con.close();
-			}
-		} catch (SQLException e) {
-
-			e.printStackTrace();
+			session.save(email);
+		} catch (HibernateException e) {
+			isSaved = false;
 		}
 
-		// record created, return true
-		if (affectedRows == 1) {
-			return true;
-		}
+		session.getTransaction().commit();
 
-		return false;
+		return isSaved;
 	}
 
 }
