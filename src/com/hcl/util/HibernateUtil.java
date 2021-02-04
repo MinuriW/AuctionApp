@@ -5,6 +5,7 @@ import java.util.ResourceBundle;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import com.hcl.seller.domain.AuctionItem;
 import com.hcl.user.domain.User;
 
 public class HibernateUtil {
@@ -20,6 +21,7 @@ public class HibernateUtil {
 			cfg.setProperty("hibernate.connection.username", rb.getString("db.username"));
 			cfg.setProperty("hibernate.connection.password", rb.getString("db.password"));
 			cfg.addAnnotatedClass(User.class);
+			cfg.addAnnotatedClass(AuctionItem.class);
 
 			sessionFactory = cfg.buildSessionFactory();
 		}

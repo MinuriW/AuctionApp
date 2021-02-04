@@ -2,13 +2,32 @@ package com.hcl.seller.domain;
 
 import java.sql.Timestamp;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="auction_item")
 public class AuctionItem {
+	@Id
+	@SequenceGenerator(name="auction_item_seq", sequenceName="auction_item_seq", allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="auction_item_seq")
 	private int id;
+	@Column
 	private String title;
+	@Column
 	private String condition;
+	@Column
 	private Timestamp startDate;
+	@Column
 	private Timestamp endDate;
+	@Column
 	private Double startingPrice;
+	@Column
 	private String photoURL;
 
 	public AuctionItem(int id, String title, String condition, Timestamp startDate, Timestamp endDate,
