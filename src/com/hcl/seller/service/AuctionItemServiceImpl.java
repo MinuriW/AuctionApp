@@ -6,6 +6,7 @@ import java.util.Date;
 
 import com.hcl.seller.dao.AuctionItemDAO;
 import com.hcl.seller.dao.AuctionItemDAOImpl;
+import com.hcl.seller.domain.AuctionItem;
 import com.hcl.seller.util.PhotoManager;
 import com.hcl.seller.util.PhotoManagerImpl;
 
@@ -34,9 +35,9 @@ public class AuctionItemServiceImpl implements AuctionItemService {
 		
 		String photoURL = photoManager.savePhoto(photo);
 
-		System.out.println(photoURL);
+		AuctionItem auctionItem = new AuctionItem(title, condition, startDate, endDate, startingPrice, photoURL);
 		
-		return auctionItemDAO.insertAuctionItem(title, condition, startDate, endDate, startingPrice, photoURL);
+		return auctionItemDAO.insertAuctionItem(auctionItem);
 
 	}
 
