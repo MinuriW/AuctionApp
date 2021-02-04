@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Submit Item</title>
+<title>Sign up</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <script
@@ -26,6 +26,7 @@
         <h1>Signup</h1>
 
         <form class="form">
+        	<input required type="text" name="username" placeholder="Username">
             <input required type="text" name="firstname" placeholder="First name">
             <input required type="text" name="lastname" placeholder="Last name">
             <input required type="email" name="email" placeholder="Email">
