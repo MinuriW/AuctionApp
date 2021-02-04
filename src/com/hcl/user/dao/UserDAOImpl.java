@@ -4,10 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 
 import com.hcl.user.domain.User;
 import com.hcl.util.DbConnection;
@@ -30,25 +33,31 @@ public class UserDAOImpl implements UserDAO {
 	public User getUserByEmail(String email) {
 		Session session=sessionFactory.getCurrentSession();
         session.beginTransaction();
-        User user=(User)session.get(User.class,email);
+        Criteria cr = session.createCriteria(User.class);
+        cr.add(Restrictions.eq("email", email));
+        List<User> results = cr.list();
         session.getTransaction().commit();
-        return user;
-
+        
+        
+        if(results != null && results.size()!=0) {
+        	return results.get(0);
+        }
+        return null;
 
 	}
 
 	@Override
-	public Boolean insertUser(String username, String firstName, String lastName, String email, String password) {
+	public Boolean insertUser(User user) {
 
 
 		Session session = sessionFactory.openSession();
-
+		
 		session.beginTransaction();
 
 		boolean isSaved = true;
 
 		try {
-			session.save(email);
+			session.save(user);
 		} catch (HibernateException e) {
 			isSaved = false;
 		}
