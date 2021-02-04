@@ -17,41 +17,6 @@
 <body>
 
 
-    <nav class="navbar navbar-expand-lg bg-white">
-      
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link pr-5 active" href="#">Home</a>
-            <a class="nav-item nav-link pr-5" href="#">View Bids</a>
-            <a class="nav-item nav-link pr-5" href="#">Track Orders</a>
-           
-            <a class="nav-item nav-link pr-5" href="#">Login</a>
-          </div>
-          
-        <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-     <button  class="btn btn-outline-primary" type="submit">Search</button>
-    </form>
-        </div>
-      </nav>
-
-	
-
-<!--- Image Slider -->
-<div id="slides" class="carousel slide" data-ride="carousel">
-
-<!--dashes botom of the picture-->
-<ul class="carousel-indicators">
-	<li data-target="#slides" data-slide-to="0" class="active"></li>
-	<li data-target="#slides" data-slide-to="1"></li>
-	<li data-target="#slides" data-slide-to="2"></li>
-
-</ul>
-
-
 <!--images-->
 	<div class="carousel-inner">
 		<div class="carousel-item active">
@@ -92,11 +57,11 @@
 					
 					<h5>3 bids </h5>
 					
-					<input type="button" onclick="location.href='View Bids.jsp'" value=" Place bid">
+					<input type="button" onclick="location.href='viewItem.jsp'" value=" Place bid">
 				
 					<p><small><del>$2.05</del><span>$1</span></small></p>
 					<p><small>6d 14h left (Mon, 02:32 AM)</small></p>
-					<p><small>From United States</small></p>
+					
 				</div>
 			</div>
 
@@ -109,7 +74,7 @@
 					<input type="button" onclick="location.href='View Bids.jsp'" value=" Place bid">
 					<p><small><del>$10.05</del><span>$8</span></small></p>
 					<p><small>5d 14h left (Mon, 02:32 AM)</small></p>
-					<p><small>From United States</small></p>
+					
 				</div>
 			</div>
 
@@ -121,7 +86,7 @@
 					<input type="button" onclick="location.href='View Bids.jsp'" value=" Place bid">
 					<p><small><del>$2.05</del><span>$1</span></small></p>
 					<p><small>4d 14h left (Mon, 02:32 AM)</small></p>
-					<p><small>From United States</small></p>
+					
 				</div>
 			</div>
 
@@ -134,7 +99,7 @@
 					<input type="button" onclick="location.href='View Bids.jsp'" value=" Place bid">
 					<p><small><del>$5.05</del><span>$3</span></small></p>
 					<p><small>1d 14h left (Mon, 02:32 AM)</small></p>
-					<p><small>From United States</small></p>
+					
 					
 				</div>
 			</div>
@@ -152,7 +117,7 @@
 					<input type="button" onclick="location.href='View Bids.jsp'" value=" Place bid">
 					<p><small><del>$2.05</del><span>$1</span></small></p>
 					<p><small>9d 14h left (Mon, 02:32 AM)</small></p>
-					<p><small>From United States</small></p>
+					
 				</div>
 			</div>
 			
@@ -165,7 +130,7 @@
 					<input type="button" onclick="location.href='View Bids.jsp'" value=" Place bid">
 					<p><small><del>$1.05</del><span>$1</span></small></p>
 					<p><small>4d 14h left (Mon, 02:32 AM)</small></p>
-					<p><small>From United States</small></p>
+					
 				</div>
 			</div>
 			
@@ -178,7 +143,7 @@
 					<input type="button" onclick="location.href='View Bids.jsp'" value=" Place bid">
 					<p><small><del>$1.55</del><span>$1</span></small></p>
 					<p><small>2d 14h left (Mon, 02:32 AM)</small></p>
-					<p><small>From United States</small></p>
+					
 				</div>
 			</div>
 			
@@ -191,7 +156,7 @@
 					<input type="button" onclick="location.href='View Bids.jsp'" value=" Place bid">
 					<p><small><del>$2.05</del><span>$1</span></small></p>
 					<p><small>1d 14h left (Mon, 02:32 AM)</small></p>
-					<p><small>From United States</small></p>
+					
 				</div>
 			</div>
 			
@@ -206,73 +171,6 @@
 	
 	
 </section>
-
-
-
-
-
-
-<hr>
-
-
-    <section class="subs">
-        <div class="container py-5 text-white ">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="row pt-2">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-2">
-                          <span><i class="fas fa-sync"></i></span>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-10 col-10">
-                            <h5>Return & Exchange</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="row pt-2">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-2">
-                          <span><i class="fas fa-gift"></i></span>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-10 col-10">
-                            <h5>Receive Gift cards</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="row pt-2">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-2">
-                          <span><i class="fas fa-user-shield"></i></span>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-10 col-10">
-                            <h5>Online Support</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="row">
-                        <input type="text" placeholder="Your Email">
-                        <button class="btn1">SUBSCRIBE</button>
-                  </div>
-                </div>
-            
-            </div>
-            
-        </div>
-    </section>
-
-
-
-    <section class="contact  bg-light pt-5 text-center">
-        <div class="container bg-light">
-            <div class="row py-3">
-                <div class="col-lg-7 mx-auto">
-                 <input type="text" placeholder="Enter Your Email Address">
-                 <button class="btn4 my-5">GET NOTIFIED</button>
-                 <p>©Copyright 2021 All Rights Reserved</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
 
