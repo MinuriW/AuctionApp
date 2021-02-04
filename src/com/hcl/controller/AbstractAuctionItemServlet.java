@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.hcl.seller.AuctionItemService;
-import com.hcl.seller.AuctionItemServiceImpl;
+import com.hcl.seller.service.AuctionItemService;
+import com.hcl.seller.service.AuctionItemServiceImpl;
 
 /**
  * Servlet implementation class AbstractAuctionItemServlet

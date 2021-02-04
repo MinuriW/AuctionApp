@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
-import com.hcl.seller.AuctionItemService;
-import com.hcl.seller.AuctionItemServiceImpl;
+import com.hcl.seller.service.AuctionItemService;
+import com.hcl.seller.service.AuctionItemServiceImpl;
 
 @MultipartConfig(fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5)
 @WebServlet("/submitAuctionItem")

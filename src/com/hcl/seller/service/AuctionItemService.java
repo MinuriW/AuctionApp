@@ -1,4 +1,4 @@
-package com.hcl.seller;
+package com.hcl.seller.service;
 
 import java.io.InputStream;
 
