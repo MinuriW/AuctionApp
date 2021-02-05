@@ -26,8 +26,8 @@
         <h1>Sign in</h1>
 
         <form class="form" action="signIn" method="post">
-            <input required id="username" type="text" placeholder="Username">
-            <input required id="password" type="password" placeholder="Password">
+            <input required id="username" name="username" type="text" placeholder="Username">
+            <input required id="password" name="password" type="password" placeholder="Password">
             <button type="submit" id="signup-button">Sign in</button>
         </form>
     </div>
