@@ -21,7 +21,7 @@ public class AuctionItemServiceImpl implements AuctionItemService {
 	}
 
 	@Override
-	public Boolean submitAuctionItem(String title, String condition, Integer timePeriod,
+	public Boolean submitAuctionItem(String title, String description, String condition, Integer timePeriod,
 			Double startingPrice, InputStream photo) {
 
 		Date auctionStart = new Date();
@@ -35,7 +35,7 @@ public class AuctionItemServiceImpl implements AuctionItemService {
 		
 		String photoURL = photoManager.savePhoto(photo);
 
-		AuctionItem auctionItem = new AuctionItem(title, condition, startDate, endDate, startingPrice, photoURL);
+		AuctionItem auctionItem = new AuctionItem(title, description, condition, startDate, endDate, startingPrice, photoURL);
 		
 		return auctionItemDAO.insertAuctionItem(auctionItem);
 

@@ -41,12 +41,13 @@ public class SubmitAuctionItemServlet extends AbstractAuctionItemServlet {
 		// Get Form Data From Request
 
 		String title = getParameterValue(request, "title");
+		String description = getParameterValue(request, "description");
 		String condition = getParameterValue(request, "condition");
 		Integer timePeriod = Integer.parseInt(getParameterValue(request, "timePeriod"));
 		Double startingPrice = Double.parseDouble(getParameterValue(request, "startingPrice"));
 		InputStream photo = request.getPart("photo").getInputStream();
 
-		Boolean isInserted = getAuctionItemService().submitAuctionItem(title, condition, timePeriod, startingPrice,
+		Boolean isInserted = getAuctionItemService().submitAuctionItem(title, description, condition, timePeriod, startingPrice,
 				photo);
 		
 		System.out.println(isInserted);

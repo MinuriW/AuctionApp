@@ -11,16 +11,18 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="auction_item")
+@Table(name = "auction_item")
 public class AuctionItem {
 	@Id
-	@SequenceGenerator(name="auction_item_seq", sequenceName="auction_item_seq", allocationSize=1)
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="auction_item_seq")
+	@SequenceGenerator(name = "auction_item_seq", sequenceName = "auction_item_seq", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "auction_item_seq")
 	private int id;
 	@Column
 	private String title;
 	@Column
 	private String condition;
+	@Column
+	private String description;
 	@Column
 	private Timestamp startDate;
 	@Column
@@ -30,14 +32,14 @@ public class AuctionItem {
 	@Column
 	private String photoURL;
 
-	public AuctionItem(int id, String title, String condition, Timestamp startDate, Timestamp endDate,
-			Double startingPrice, String photoURL) {
-		this(title, condition, startDate, endDate, startingPrice, photoURL);
+	public AuctionItem(int id, String title, String description, String condition, Timestamp startDate,
+			Timestamp endDate, Double startingPrice, String photoURL) {
+		this(title, description, condition, startDate, endDate, startingPrice, photoURL);
 		this.id = id;
 	}
 
-	public AuctionItem(String title, String condition, Timestamp startDate, Timestamp endDate, Double startingPrice,
-			String photoURL) {
+	public AuctionItem(String title, String description, String condition, Timestamp startDate, Timestamp endDate,
+			Double startingPrice, String photoURL) {
 		super();
 		this.title = title;
 		this.condition = condition;
@@ -65,6 +67,14 @@ public class AuctionItem {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getCondition() {

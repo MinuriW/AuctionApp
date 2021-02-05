@@ -6,7 +6,8 @@ public interface AuctionItemService {
 	
 	// This method is used to submit an item for auction
 	public Boolean submitAuctionItem(
-			String title, 
+			String title,
+			String description,
 			String condition, 
 			Integer timePeriod,
 			Double startingPrice,

@@ -24,12 +24,13 @@ class AuctionItemDAOImplTest {
 	@Test
 	void testSubmitAuctionItem() {
 		String title = "auction item";
+		String description = "this is an item for auction";
 		String condition = "condition";
 		Timestamp startDate = new Timestamp(new Date().getTime());
 		Timestamp endDate = new Timestamp(new Date().getTime() +  10000);
 		Double startingPrice = 0.1;
 		String photoURL = "/path/to/photo";
-		auctionItem = new AuctionItem(title, condition, startDate, endDate, startingPrice, photoURL);
+		auctionItem = new AuctionItem(title, description, condition, startDate, endDate, startingPrice, photoURL);
 		
 		assertTrue(dao.insertAuctionItem(auctionItem));
 		
