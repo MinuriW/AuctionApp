@@ -26,7 +26,7 @@
         <h1>Login</h1>
 
         <form class="form">
-            <input required id="email" type="email" placeholder="Email">
+            <input required id="username" type="text" placeholder="Username">
             <input required id="password" type="password" placeholder="Password">
             <button type="submit" id="signup-button">Login</button>
         </form>
