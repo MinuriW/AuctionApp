@@ -3,6 +3,7 @@ package com.hcl.seller.service;
 import java.io.InputStream;
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.List;
 
 import com.hcl.seller.dao.AuctionItemDAO;
 import com.hcl.seller.dao.AuctionItemDAOImpl;
@@ -40,5 +41,13 @@ public class AuctionItemServiceImpl implements AuctionItemService {
 		return auctionItemDAO.insertAuctionItem(auctionItem);
 
 	}
+
+	@Override
+	public List<AuctionItem> getAllAuctionItems() {
+		
+		return auctionItemDAO.getAllAuctionItems();
+	}
+	
+	
 
 }

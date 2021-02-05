@@ -1,6 +1,9 @@
 package com.hcl.seller.service;
 
 import java.io.InputStream;
+import java.util.List;
+
+import com.hcl.seller.domain.AuctionItem;
 
 public interface AuctionItemService {
 	
@@ -12,4 +15,9 @@ public interface AuctionItemService {
 			Integer timePeriod,
 			Double startingPrice,
 			InputStream photo );
+	
+	public List<AuctionItem> getAllAuctionItems();
+	
 }
+
+
