@@ -26,7 +26,13 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public Boolean signInUser(String username, String password) {
 		
-		return null;
+		User user = userDAO.getUserByUsername(username);
+		
+		if(user != null && user.getPassword().equals(password)) {
+			return true;
+		}
+		
+		return false;
 	}
 	
 	
