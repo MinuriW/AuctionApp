@@ -6,7 +6,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import com.hcl.seller.dao.AuctionItemDAOImpl;
 import com.hcl.user.domain.User;
 
 class UserDAOImplTest {
