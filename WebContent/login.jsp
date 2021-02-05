@@ -23,12 +23,12 @@
 <body>
 	<div class="wrapper">
     <div class="container">
-        <h1>Login</h1>
+        <h1>Sign in</h1>
 
-        <form class="form">
+        <form class="form" action="signIn" method="post">
             <input required id="username" type="text" placeholder="Username">
             <input required id="password" type="password" placeholder="Password">
-            <button type="submit" id="signup-button">Login</button>
+            <button type="submit" id="signup-button">Sign in</button>
         </form>
     </div>
 
