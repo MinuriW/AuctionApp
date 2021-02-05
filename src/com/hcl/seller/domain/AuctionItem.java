@@ -31,22 +31,34 @@ public class AuctionItem {
 	private Double startingPrice;
 	@Column
 	private String photoURL;
+	@Column
+	private boolean isPublished;
 
-	public AuctionItem(int id, String title, String description, String condition, Timestamp startDate,
-			Timestamp endDate, Double startingPrice, String photoURL) {
-		this(title, description, condition, startDate, endDate, startingPrice, photoURL);
-		this.id = id;
-	}
-
-	public AuctionItem(String title, String description, String condition, Timestamp startDate, Timestamp endDate,
-			Double startingPrice, String photoURL) {
+	public AuctionItem(int id, String title, String condition, String description, Timestamp startDate,
+			Timestamp endDate, Double startingPrice, String photoURL, boolean isPublished) {
 		super();
+		this.id = id;
 		this.title = title;
 		this.condition = condition;
+		this.description = description;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.startingPrice = startingPrice;
 		this.photoURL = photoURL;
+		this.isPublished = isPublished;
+	}
+
+	public AuctionItem(String title, String condition, String description, Timestamp startDate, Timestamp endDate,
+			Double startingPrice, String photoURL, boolean isPublished) {
+		super();
+		this.title = title;
+		this.condition = condition;
+		this.description = description;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.startingPrice = startingPrice;
+		this.photoURL = photoURL;
+		this.isPublished = isPublished;
 	}
 
 	public int getId() {
@@ -115,6 +127,14 @@ public class AuctionItem {
 
 	public void setPhotoURL(String photoURL) {
 		this.photoURL = photoURL;
+	}
+
+	public boolean isPublished() {
+		return isPublished;
+	}
+
+	public void setPublished(boolean isPublished) {
+		this.isPublished = isPublished;
 	}
 
 }

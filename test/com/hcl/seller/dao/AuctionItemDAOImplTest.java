@@ -30,7 +30,7 @@ class AuctionItemDAOImplTest {
 		Timestamp endDate = new Timestamp(new Date().getTime() +  10000);
 		Double startingPrice = 0.1;
 		String photoURL = "/path/to/photo";
-		auctionItem = new AuctionItem(title, description, condition, startDate, endDate, startingPrice, photoURL);
+		auctionItem = new AuctionItem(title, description, condition, startDate, endDate, startingPrice, photoURL, false);
 		
 		assertTrue(dao.insertAuctionItem(auctionItem));
 		
