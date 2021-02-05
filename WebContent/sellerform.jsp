@@ -41,11 +41,11 @@
 					
 						<div class="form-group">
 						<h2 class="card-heading">Submit item</h2>
-							    <input required class="form-control" type="text" placeholder="Title"name="Title"><br> 
-								<input required class="form-control" type="text" placeholder="Item Condition" name="itemcondition"><br> 
-								<input required class="form-control" type="text" placeholder="Item Description" name="itemdescription"><br>
-								<input required class="form-control" type="text" placeholder="Bid starting price" name="bid"> <br>
-								<input required class="form-control" type="text" placeholder="Auction time" name="auction">
+							    <input required class="form-control" type="text" placeholder="Title"name="title"><br> 
+								<input required class="form-control" type="text" placeholder="Condition" name="condition"><br> 
+								<input required class="form-control" type="text" placeholder="Description" name="itemDescription"><br>
+								<input required class="form-control" type="text" placeholder="Starting price" name="startingPrice"> <br>
+								<input required class="form-control" type="text" placeholder="Auction time" name="timePeriod">
 						</div>
 
 
