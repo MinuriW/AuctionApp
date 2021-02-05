@@ -1,6 +1,8 @@
 /build/
+/resources/oracle.properties
 
 .classpath
 .project
 /.settings
 /bin
+.idea/
