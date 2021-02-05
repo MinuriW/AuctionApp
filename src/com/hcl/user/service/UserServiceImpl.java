@@ -22,6 +22,14 @@ public class UserServiceImpl implements UserService{
 		User user = new User(username, firstName, lastName, email, password);
 		return userDAO.insertUser(user);
 	}
+
+	@Override
+	public Boolean signInUser(String username, String password) {
+		
+		return null;
+	}
+	
+	
 	
 	
 	
