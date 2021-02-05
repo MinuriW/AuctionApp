@@ -1,5 +1,6 @@
 package com.hcl.seller.dao;
 
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -11,7 +12,23 @@ public class AuctionItemDAOImpl implements AuctionItemDAO {
 	@Override
 	public Boolean insertAuctionItem(AuctionItem auctionItem) {
 		
-		return false;
+		SessionFactory sessionFactory = HibernateUtil.geSessionFactory();
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		
+		Boolean isSaved = true;
+		
+		try {
+			session.save(auctionItem);
+		} catch (HibernateException e ) {
+			isSaved = false;
+		}
+		
+		
+		session.getTransaction().commit();
+		
+		
+		return isSaved;
 	}
 
 	@Override
