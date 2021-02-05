@@ -15,6 +15,7 @@
 	<link href="style.css" rel="stylesheet">
 </head>
 <body>
+<jsp:include page="nav.jsp"></jsp:include>
 
 
 <!--images-->
@@ -48,19 +49,15 @@
 	<div class="container py-5">
 		<h1 class="text-center">Bid Items</h1>
 		<div class="row py-5">
-			<div class="col-lg-3">
+				<div class="col-lg-3">
 				<div class="card mb-3">
+					<img src= "img/watch-1.jpg"class="img-fluid" alt="">
+					<h5>FASTRACK X ANANYA PANDAY-LEATHER STRAP WATCH</h5>
 				
-				<!--- Watch Collection -->
-					<img src="img/biditem4.png" class="img-fluid" alt="">
-					<h5>Men Sport LED Watch </h5>
-					
-					<h5>3 bids </h5>
-					
-					<input type="button" onclick="location.href='viewItem.jsp'" value=" Place bid">
-				
-					<p><small><del>$2.05</del><span>$1</span></small></p>
-					<p><small>6d 14h left (Mon, 02:32 AM)</small></p>
+					<h5>5 bids </h5>
+					<input type="button" onclick="location.href='View Bids.jsp'" value=" Place bid">
+					<p><small><del>$10.05</del><span>$8</span></small></p>
+					<p><small>5d 14h left (Mon, 02:32 AM)</small></p>
 					
 				</div>
 			</div>
@@ -173,7 +170,7 @@
 </section>
 
 
-
+<jsp:include page="footer.jsp"></jsp:include>
 
 
 

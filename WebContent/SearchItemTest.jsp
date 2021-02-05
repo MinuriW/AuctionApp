@@ -15,6 +15,7 @@
 	
  
 <body>
+<jsp:include page="nav.jsp"></jsp:include> 
 
 <div class="container mt-4">
     <div class="row d-flex justify-content-center">
@@ -35,6 +36,7 @@
 
     
 
+<jsp:include page="footer.jsp"></jsp:include>
 
 
 </body>

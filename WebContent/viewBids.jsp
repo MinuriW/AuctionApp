@@ -18,19 +18,23 @@
 </head>
 <body>
 
+<jsp:include page="nav.jsp"></jsp:include>
+
 <section class="collection">
 <h1>My Bids</h1>
 	<div class="container py-5">
 	<h1 class="text-center">Won Items</h1>
 		<h1 class="text-center"></h1>
 		<div class="row py-5">
+			
 			<div class="col-lg-3">
 				<div class="card mb-3">
 				
 				
 <!--- Won Bids -->
-					<img src="img/biditem4.png" class="img-fluid" alt="">
-					<h5>Men Sport LED Watch </h5>
+					<img src= "img/watch-1.jpg"class="img-fluid" alt="">
+					<h5>FASTRACK X ANANYA PANDAY-LEATHER STRAP WATCH</h5>
+				
 					<h5>6 bids </h5>
 					<p><small><span>$2</span></small></p>
 					  <h4 style="color: red;">Won</h4>
@@ -140,6 +144,7 @@
 	</div>
 	
 </section>
+<jsp:include page="footer.jsp"></jsp:include>
 
 </body>
 </html>

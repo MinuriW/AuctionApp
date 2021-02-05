@@ -32,7 +32,7 @@
 </head>
 <body>
 
-
+<jsp:include page="nav.jsp"></jsp:include>
 <section class="collection">
 	<div class="container py-5">
 		<h1 class="text-center">Won Items</h1>
@@ -41,9 +41,9 @@
 				<div class="card mb-3">
 				
 				<!--- Watch Collection -->
-					<img src="img/biditem4.png" class="img-fluid" alt="">
-					<h5>Men Sport LED Watch </h5>
-					
+					<img src= "img/watch-1.jpg"class="img-fluid" alt="">
+					<h5>FASTRACK X ANANYA PANDAY-LEATHER STRAP WATCH</h5>
+				
 					<h5> bids </h5>
 					<h5>3 bids </h5>
 					
@@ -99,6 +99,7 @@
 </section>
 
 
+<jsp:include page="footer.jsp"></jsp:include>
 
 
 </body>
