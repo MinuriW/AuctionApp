@@ -1,75 +1,48 @@
 package com.hcl.seller.dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Timestamp;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
-import com.hcl.util.DbConnection;
-import com.hcl.util.DbConnectionImpl;
+import com.hcl.seller.domain.AuctionItem;
+import com.hcl.util.HibernateUtil;
 
 public class AuctionItemDAOImpl implements AuctionItemDAO {
-	private static int id = 1;
-	private static final String INSERT_AUCTION_ITEM = "INSERT INTO auction_item VALUES( auction_item_id_seq.NEXTVAL, ?, ?, ?, ?, ?, ? )";
-	
-	private DbConnection dbConnection;
-	
-	
-	
-	public AuctionItemDAOImpl() {
-		super();
-		dbConnection = new DbConnectionImpl();
-	}
-
-
 
 	@Override
-	public Boolean insertAuctionItem(String title, String condition, Timestamp startDate, Timestamp endDate, Double startingPrice,
-			String photoURL) {
-		Connection con = null;
-		PreparedStatement pmt = null;
+	public Boolean insertAuctionItem(AuctionItem auctionItem) {
 		
-		int affectedRows = 0;
-		try {
-			con = dbConnection.getConnection();
-			
-			pmt = con.prepareStatement(INSERT_AUCTION_ITEM);
-			
-			pmt.setString(1, title);
-			pmt.setString(2, condition);
-			pmt.setTimestamp(3, startDate);
-			pmt.setTimestamp(4, endDate);
-			pmt.setDouble(5, startingPrice);
-			pmt.setString(6, photoURL);
-			
-			affectedRows = pmt.executeUpdate();
-			
-			
-			
-		} catch (ClassNotFoundException | SQLException e) {
-
-			e.printStackTrace();
-		}
+		SessionFactory sessionFactory = HibernateUtil.geSessionFactory();
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		
+		Boolean isSaved = true;
 		
 		try {
-			if(pmt != null) {
-				pmt.close();
-			}
-			
-			if(con != null) {
-				con.close();
-			}
-		} catch (SQLException e) {
+			session.save(auctionItem);
+		} catch (HibernateException e ) {
+			isSaved = false;
+		}
+		
+		
+		session.getTransaction().commit();
+		
+		
+		return isSaved;
+	}
 
-			e.printStackTrace();
-		}
+	@Override
+	public AuctionItem getAuctionItemById(int id) {
+		SessionFactory sessionFactory = HibernateUtil.geSessionFactory();
 		
-		// record created, return true
-		if(affectedRows == 1) {
-			return true;
-		}
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
 		
-		return false;
+		AuctionItem auctionItem = (AuctionItem) session.get(AuctionItem.class, new Integer(id));
+		
+		session.getTransaction().commit();
+		
+		return auctionItem;
 	}
 
 	

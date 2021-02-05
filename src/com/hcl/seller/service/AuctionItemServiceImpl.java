@@ -1,4 +1,4 @@
-package com.hcl.seller;
+package com.hcl.seller.service;
 
 import java.io.InputStream;
 import java.sql.Timestamp;
@@ -6,6 +6,7 @@ import java.util.Date;
 
 import com.hcl.seller.dao.AuctionItemDAO;
 import com.hcl.seller.dao.AuctionItemDAOImpl;
+import com.hcl.seller.domain.AuctionItem;
 import com.hcl.seller.util.PhotoManager;
 import com.hcl.seller.util.PhotoManagerImpl;
 
@@ -20,7 +21,7 @@ public class AuctionItemServiceImpl implements AuctionItemService {
 	}
 
 	@Override
-	public Boolean submitAuctionItem(String title, String condition, Integer timePeriod,
+	public Boolean submitAuctionItem(String title, String description, String condition, Integer timePeriod,
 			Double startingPrice, InputStream photo) {
 
 		Date auctionStart = new Date();
@@ -34,9 +35,9 @@ public class AuctionItemServiceImpl implements AuctionItemService {
 		
 		String photoURL = photoManager.savePhoto(photo);
 
-		System.out.println(photoURL);
+		AuctionItem auctionItem = new AuctionItem(title, description, condition, startDate, endDate, startingPrice, photoURL, false);
 		
-		return auctionItemDAO.insertAuctionItem(title, condition, startDate, endDate, startingPrice, photoURL);
+		return auctionItemDAO.insertAuctionItem(auctionItem);
 
 	}
 
