@@ -60,8 +60,21 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public User getUserByUsername(String username) {
-		// TODO Auto-generated method stub
-		return null;
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+		Session session=sessionFactory.openSession();
+        session.beginTransaction();
+        Criteria cr = session.createCriteria(User.class);
+        cr.add(Restrictions.eq("username", username));
+        
+        List<User> results = cr.list();
+        
+        session.getTransaction().commit();
+        
+        
+        if(results != null && results.size()!=0) {
+        	return results.get(0);
+        }
+        return null;
 	}
 
 }
