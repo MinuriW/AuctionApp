@@ -12,7 +12,7 @@ public class AuctionItemDAOImpl implements AuctionItemDAO {
 	@Override
 	public Boolean insertAuctionItem(AuctionItem auctionItem) {
 		
-		SessionFactory sessionFactory = HibernateUtil.geSessionFactory();
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		
@@ -33,7 +33,7 @@ public class AuctionItemDAOImpl implements AuctionItemDAO {
 
 	@Override
 	public AuctionItem getAuctionItemById(int id) {
-		SessionFactory sessionFactory = HibernateUtil.geSessionFactory();
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 		
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();

@@ -25,7 +25,7 @@
     <div class="container">
         <h1>Signup</h1>
 
-        <form class="form">
+        <form class="form" method="post" action="signup">
         	<input required type="text" name="username" placeholder="Username">
             <input required type="text" name="firstname" placeholder="First name">
             <input required type="text" name="lastname" placeholder="Last name">
