@@ -19,15 +19,8 @@ import com.hcl.util.HibernateUtil;
 
 public class UserDAOImpl implements UserDAO {
 
-	//private static final String SELECT_USER_BY_EMAIL = "SELECT * FROM auction_item WHERE email=?";
-	//private static final String INSERT_USER = "INSERT INTO \"user\" VALUES (user_id_seq.NEXTVAL, ?, ?, ?, ?)";
-	
-	//SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-	private DbConnection dbConnection;
-
 	public UserDAOImpl() {
 		super();
-		dbConnection = new DbConnectionImpl();
 	}
 
 	@Override
@@ -63,6 +56,25 @@ public class UserDAOImpl implements UserDAO {
 
 		session.getTransaction().commit();
 		return isSaved;
+	}
+
+	@Override
+	public User getUserByUsername(String username) {
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+		Session session=sessionFactory.openSession();
+        session.beginTransaction();
+        Criteria cr = session.createCriteria(User.class);
+        cr.add(Restrictions.eq("username", username));
+        
+        List<User> results = cr.list();
+        
+        session.getTransaction().commit();
+        
+        
+        if(results != null && results.size()!=0) {
+        	return results.get(0);
+        }
+        return null;
 	}
 
 }

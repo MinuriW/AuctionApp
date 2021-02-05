@@ -8,4 +8,6 @@ public interface UserDAO {
 	//public Boolean insertUser(String username, String firstName, String lastName, String email, String password); 
 	public Boolean insertUser(User user);
 	
+	public User getUserByUsername(String username);
+	
 }
