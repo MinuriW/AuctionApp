@@ -21,7 +21,8 @@ public class UserDAOImpl implements UserDAO {
 
 	//private static final String SELECT_USER_BY_EMAIL = "SELECT * FROM auction_item WHERE email=?";
 	//private static final String INSERT_USER = "INSERT INTO \"user\" VALUES (user_id_seq.NEXTVAL, ?, ?, ?, ?)";
-	SessionFactory sessionFactory = HibernateUtil.geSessionFactory();
+	
+	SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 	private DbConnection dbConnection;
 
 	public UserDAOImpl() {
@@ -49,11 +50,8 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public Boolean insertUser(User user) {
 
-
 		Session session = sessionFactory.openSession();
-		
 		session.beginTransaction();
-
 		boolean isSaved = true;
 
 		try {
@@ -63,7 +61,6 @@ public class UserDAOImpl implements UserDAO {
 		}
 
 		session.getTransaction().commit();
-
 		return isSaved;
 	}
 

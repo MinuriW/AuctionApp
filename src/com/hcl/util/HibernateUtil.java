@@ -10,7 +10,7 @@ import com.hcl.user.domain.User;
 public class HibernateUtil {
 	private static SessionFactory sessionFactory = null;
 
-	public static SessionFactory geSessionFactory() {
+	public static SessionFactory getSessionFactory() {
 
 		if (sessionFactory == null) {
 			ResourceBundle rb = ResourceBundle.getBundle("oracle");

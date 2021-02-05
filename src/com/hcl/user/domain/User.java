@@ -1,11 +1,23 @@
 package com.hcl.user.domain;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name= "auction_user")
 public class User {
+	@Id
+    @SequenceGenerator(name = "auction_user_seq", sequenceName = "auction_user_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "auction_user_seq")
 	private Integer id;
+	@Column
 	private String username;
+	@Column
 	private String firstName;
+	@Column
 	private String lastName;
+	@Column
 	private String email;
+	@Column
 	private String password;
 
 	public User() {
@@ -15,6 +27,17 @@ public class User {
 	public User(Integer id, String username, String firstName, String lastName, String email, String password) {
 		super();
 		this.id = id;
+		this.username = username;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.password = password;
+	}
+	
+	
+
+	public User(String username, String firstName, String lastName, String email, String password) {
+		super();
 		this.username = username;
 		this.firstName = firstName;
 		this.lastName = lastName;
