@@ -11,7 +11,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<!--social media icons-->
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-	<link href="../css/searchItems.css" rel="stylesheet">
+	<link href="css/searchItems.css" rel="stylesheet">
 	
  </head>
 <body>
@@ -47,7 +47,7 @@
 		
 				<div class="col-lg-3">
 				<div class="card mb-3">
-					<img src= "../img/watch-1.jpg"class="img-fluid" alt="">
+					<img src= "img/watch-1.jpg"class="img-fluid" alt="">
 					<h5>FASTRACK X ANANYA PANDAY-LEATHER STRAP WATCH</h5>
 				
 					<h5>5 bids </h5>
@@ -60,7 +60,7 @@
 
 			<div class="col-lg-3">
 				<div class="card mb-3">
-					<img src= "../img/biditem5.jpg"class="img-fluid" alt="">
+					<img src= "img/biditem5.jpg"class="img-fluid" alt="">
 					<h5>SKMWI 11155B Sport Watch</h5>
 				
 					<h5>5 bids </h5>
@@ -73,7 +73,7 @@
 
 			<div class="col-lg-3">
 				<div class="card mb-3">
-					<img src= "../img/watch-1.73.jpg" class="img-fluid" alt="">
+					<img src= "img/watch-1.73.jpg" class="img-fluid" alt="">
 					<h5> Skmi Stylish Watch</h5>
 					<h5>11 bids </h5>
 					<input type="button" onclick="location.href='View Bids.jsp'" value=" Place bid">
@@ -86,7 +86,7 @@
 
 			<div class="col-lg-3">
 				<div class="card mb-3">
-					<img src="../img/watch-8.jpg" class="img-fluid" alt="">
+					<img src="img/watch-8.jpg" class="img-fluid" alt="">
 					<h5>Big Digital Mens Watch</h5>
 					<h5>6 bids </h5>
 					<input type="button" onclick="location.href='View Bids.jsp'" value=" Place bid">
@@ -103,7 +103,7 @@
 			<div class="col-lg-3">
 				<div class="card mb-3">
 				
-					<img src="../img/books-1.jpg" class="img-fluid" alt="">
+					<img src="img/books-1.jpg" class="img-fluid" alt="">
 					<h5>High-End Note Book</h5>
 					<h5>1 bid</h5>
 					
@@ -117,7 +117,7 @@
 			<div class="col-lg-3">
 				<div class="card mb-3">
 				
-					<img src="../img/books-2.jpg" class="img-fluid" alt="">
+					<img src="img/books-2.jpg" class="img-fluid" alt="">
 					<h5>Custom Note Book</h5>
 					<h5>2 bid</h5>
 					<input type="button" onclick="location.href='View Bids.jsp'" value=" Place bid">
@@ -130,7 +130,7 @@
 			<div class="col-lg-3">
 				<div class="card mb-3">
 				
-					<img src="../img/books-3.jpg" class="img-fluid" alt="">
+					<img src="img/books-3.jpg" class="img-fluid" alt="">
 					<h5>Photography Book</h5>
 					<h5>4 bid</h5>
 					<input type="button" onclick="location.href='View Bids.jsp'" value=" Place bid">
@@ -143,7 +143,7 @@
 			<div class="col-lg-3">
 				<div class="card mb-3">
 				
-					<img src="../img/books-4.jpg" class="img-fluid" alt="">
+					<img src="img/books-4.jpg" class="img-fluid" alt="">
 					<h5>High Quality Note Book</h5>
 					<h5>5 bid</h5>
 					<input type="button" onclick="location.href='View Bids.jsp'" value=" Place bid">
