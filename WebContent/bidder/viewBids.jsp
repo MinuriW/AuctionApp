@@ -14,11 +14,11 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<!--social media icons-->
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-	<link href="viewBids.css" rel="stylesheet">
+	<link href="../css/viewBids.css" rel="stylesheet">
 </head>
 <body>
 
-<jsp:include page="nav.jsp"></jsp:include>
+<jsp:include page="../includes/nav.jsp"></jsp:include>
 
 <section class="collection">
 <h1>My Bids</h1>
@@ -144,7 +144,7 @@
 	</div>
 	
 </section>
-<jsp:include page="footer.jsp"></jsp:include>
+<jsp:include page="../includes/footer.jsp"></jsp:include>
 
 </body>
 </html>

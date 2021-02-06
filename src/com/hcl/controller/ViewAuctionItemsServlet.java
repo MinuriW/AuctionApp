@@ -22,7 +22,7 @@ public class ViewAuctionItemsServlet extends AbstractAuctionItemServlet {
 		List<AuctionItem> items = auctionItemService.getAllAuctionItems();
 		request.setAttribute("itemlist", items);
 
-		RequestDispatcher rd = request.getRequestDispatcher("auctionItems.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("bidder/viewAuctionItems.jsp");
 		rd.forward(request, response);
 	}
 

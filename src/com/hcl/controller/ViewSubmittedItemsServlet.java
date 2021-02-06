@@ -48,7 +48,7 @@ public class ViewSubmittedItemsServlet extends AbstractAuctionItemServlet {
 		}
 		
 		else {
-			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("signin.jsp");
 			rd.forward(request, response);
 		}
 

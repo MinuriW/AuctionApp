@@ -13,10 +13,10 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<!--social media icons-->
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-	<link href="style.css" rel="stylesheet">
+	<link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
-<jsp:include page="nav.jsp"></jsp:include>
+<jsp:include page="../includes/nav.jsp"></jsp:include>
 
       <div class="container101">
       
@@ -63,7 +63,7 @@
       
       
       </div>
-<jsp:include page="footer.jsp"></jsp:include>
+<jsp:include page="../includes/footer.jsp"></jsp:include>
     
 </body>
 </html>

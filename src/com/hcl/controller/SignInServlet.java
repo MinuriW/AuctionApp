@@ -42,18 +42,16 @@ public class SignInServlet extends AbstractUserServlet {
 			httpSession.setAttribute("username", username);
 			
 			// set resource path to auctionItems.jsp
-			resourcePath = "auctionItems.jsp";
+			resourcePath = "bidder/viewAuctionItems.jsp";
 			
 		}else { // forward to sign in
 			request.setAttribute(SIGNIN_ERROR, true);
-			resourcePath = "login.jsp";
+			resourcePath = "signin.jsp";
 		}
 		
 		RequestDispatcher rd = request.getRequestDispatcher(resourcePath);
 		rd.forward(request, response);
-		
-		
-		
+
 	}
 
 }

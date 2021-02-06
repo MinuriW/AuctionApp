@@ -26,12 +26,12 @@
 
 <!-- Main JS-->
 
-<link href="css/formstyle.css" rel="stylesheet">
+<link href="../css/formstyle.css" rel="stylesheet">
 <script type="text/javascript" src="js/sellerform.js"></script>
 </head>
 <body>
 
-<jsp:include page="navSeller.jsp"></jsp:include> 
+<jsp:include page="../includes/navSeller.jsp"></jsp:include>
 <br>
 <br>
 <br>
@@ -87,7 +87,7 @@
 		</div>
 	</div>
 
-<jsp:include page="footer.jsp"></jsp:include> 
+<jsp:include page="../includes/footer.jsp"></jsp:include> 
 </body>
 </html>
 

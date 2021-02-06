@@ -64,17 +64,17 @@ public class SubmitAuctionItemServlet extends AbstractAuctionItemServlet {
 			
 			if (isInserted) {
 				// TODO: Send Success Message
-				RequestDispatcher rd = request.getRequestDispatcher("auctionItems.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("bidder/viewAuctionItems.jsp");
 				rd.forward(request, response);
 			} else {
 				// TODO: Error Message
-				RequestDispatcher rd = request.getRequestDispatcher("submitAuctionItem.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("seller/submitAuctionItem.jsp");
 				rd.forward(request, response);
 			}
 			
 		} else {
 			// User is not signed in
-			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("signin.jsp");
 			rd.forward(request, response);
 		}
 		

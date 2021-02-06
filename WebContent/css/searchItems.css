@@ -4,7 +4,7 @@ html,body{
  
   margin:20px;
   font-family: 'poppins',sans-serif;
-  color: :#222;
+  color:#222;
 
 }
 
@@ -82,7 +82,6 @@ a:link {
     cursor: pointer;
     transition: all 2s
 }
-<!--new--!>
 .card-inner:hover {
     transform: scale(1.1)
 }
@@ -118,7 +117,6 @@ a:link {
 
 #myInput {
   box-sizing: border-box;
-  background-image: url('searchicon.png');
   background-position: 14px 12px;
   background-repeat: no-repeat;
   font-size: 16px;

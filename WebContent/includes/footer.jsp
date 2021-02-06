@@ -14,7 +14,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<!--social media icons-->
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-	<link href="style.css" rel="stylesheet">
+	<link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -77,7 +77,7 @@
                 <div class="col-lg-7 mx-auto">
                  <input type="text" placeholder="Enter Your Email Address">
                  <button class="btn4 my-5">GET NOTIFIED</button>
-                 <p>©Copyright 2021 All Rights Reserved</p>
+                 <p>ï¿½Copyright 2021 All Rights Reserved</p>
                 </div>
             </div>
         </div>

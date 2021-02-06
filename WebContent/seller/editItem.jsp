@@ -17,7 +17,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <!--social media icons-->
 <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-<link href="css/style.css" rel="stylesheet">
+<link href="css/style2.css" rel="stylesheet">
 </head>
 <body>
 	<div class="container101">

@@ -32,7 +32,7 @@ public class SignupServlet extends AbstractUserServlet {
 			Boolean isSignedUp = userService.signupUser(username, firstName, lastName, email, password);
 
 			if (isSignedUp) {
-				RequestDispatcher rs = request.getRequestDispatcher("login.jsp");
+				RequestDispatcher rs = request.getRequestDispatcher("signin.jsp");
 				rs.forward(request, response);
 			}
 			else {
