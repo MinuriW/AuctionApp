@@ -20,6 +20,8 @@ public interface AuctionItemService {
 	
 	public List<AuctionItem> getAllAuctionItems();
 	
+	public List<AuctionItem> getAllSubmittedItems(User user);
+	
 }
 
 

@@ -57,7 +57,11 @@ public class AuctionItemServiceImpl implements AuctionItemService {
 		
 		return auctionItemDAO.getAllAuctionItems();
 	}
-	
+
+	@Override
+	public List<AuctionItem> getAllSubmittedItems(User user) {
+		return auctionItemDAO.getAllSubmittedItems(user);
+	}
 	
 
 }
