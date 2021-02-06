@@ -1,6 +1,10 @@
 package com.hcl.user.domain;
 
+import java.util.List;
+
 import javax.persistence.*;
+
+import com.hcl.seller.domain.AuctionItem;
 
 @Entity
 @Table(name= "auction_user")
@@ -19,6 +23,8 @@ public class User {
 	private String email;
 	@Column
 	private String password;
+	@OneToMany(mappedBy="user", fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	private List<AuctionItem> auctionItems;
 
 	public User() {
 		super();

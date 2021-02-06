@@ -4,11 +4,16 @@ import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import com.hcl.user.domain.User;
 
 @Entity
 @Table(name = "auction_item")
@@ -33,6 +38,9 @@ public class AuctionItem {
 	private String photoURL;
 	@Column
 	private boolean isPublished;
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(nullable=false, name="auction_user_id")
+	private User user;
 
 	public AuctionItem(int id, String title, String condition, String description, Timestamp startDate,
 			Timestamp endDate, Double startingPrice, String photoURL, boolean isPublished) {
