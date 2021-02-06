@@ -13,6 +13,8 @@
         <form action="submitAuctionItem" method="POST" enctype="multipart/form-data">
             <label for="title">Title</label>
             <input id='title' name="title" type="text" onchange="validateTitle()" /><br>
+            <label for="description">Description</label>
+            <input id='description' name="description" type="text"/><br>
             <label for="condition">Condition</label>
             <input id='condition' name="condition" type="text" onchange="validateCondition()"/><br>
             <label for="photo">Photo</label>

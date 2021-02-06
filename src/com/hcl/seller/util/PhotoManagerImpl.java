@@ -11,10 +11,29 @@ import java.util.UUID;
 public class PhotoManagerImpl implements PhotoManager {
 	private static final String FILE_EXTENSION = ".jpeg";
 	private final String uploadPath;
+	private final String relativePath;
+	
+	private static String getParsedResourcePath(String resourcePath) {
+		StringBuilder sb = new StringBuilder();
+		
+		for(char c : resourcePath.toCharArray()) {
+			if(c == '\\') {
+				sb.append('/');
+			} else {
+				sb.append(c);
+			}
+		}
+		
+		return sb.toString();
+	}
+
 
 	public PhotoManagerImpl(String uploadPath) {
 		super();
-		this.uploadPath = uploadPath + File.separator + "photos";
+		uploadPath = getParsedResourcePath(uploadPath);
+		this.uploadPath = uploadPath + "photos";
+		this.relativePath = "./photos";
+		System.out.println(uploadPath);
 	}
 
 	@Override
@@ -27,7 +46,8 @@ public class PhotoManagerImpl implements PhotoManager {
 		}
 
 		UUID uuid = UUID.randomUUID();
-		String photoURL = uploadPath + File.separator + uuid.toString() + FILE_EXTENSION;
+		String photoURL = uploadPath + "/" + uuid.toString() + FILE_EXTENSION;
+		String photoRelativeURL = relativePath + "/" + uuid.toString() + FILE_EXTENSION;
 		File photoFile = new File(photoURL);
 
 		int read;
@@ -40,7 +60,7 @@ public class PhotoManagerImpl implements PhotoManager {
 			e.printStackTrace();
 		} 
 
-		return photoURL;
+		return photoRelativeURL;
 	}
 
 }

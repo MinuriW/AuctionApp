@@ -26,7 +26,7 @@ public class SignupServlet extends AbstractUserServlet {
 
 		UserService userService = getUserService();
 
-		Boolean isValidEmail = userService.checkEmail(email);
+		Boolean isValidEmail = true; //userService.checkEmail(email);
 
 		if (isValidEmail) {
 			Boolean isSignedUp = userService.signupUser(username, firstName, lastName, email, password);
