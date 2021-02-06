@@ -4,11 +4,13 @@ import java.io.InputStream;
 import java.util.List;
 
 import com.hcl.seller.domain.AuctionItem;
+import com.hcl.user.domain.User;
 
 public interface AuctionItemService {
 	
 	// This method is used to submit an item for auction
 	public Boolean submitAuctionItem(
+			User user,
 			String title,
 			String description,
 			String condition, 
