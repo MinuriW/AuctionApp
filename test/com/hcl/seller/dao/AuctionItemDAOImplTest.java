@@ -7,21 +7,38 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.junit.BeforeClass;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import com.hcl.seller.domain.AuctionItem;
+import com.hcl.user.dao.UserDAO;
+import com.hcl.user.dao.UserDAOImpl;
+import com.hcl.user.domain.User;
 
 class AuctionItemDAOImplTest {
 
 	private AuctionItemDAO dao = null;
 	private AuctionItem auctionItem = null;
-
+	private UserDAO userDAO = null;
+	private String username = "john.hoover";
+	private User user = new User(username, "john", "hoover", "john.h@abc.com", "johnH123");
+	private boolean isUserInserted = false;
+	
 	@BeforeEach
 	void initDAO() {
 		dao = new AuctionItemDAOImpl();
-
+		userDAO = new UserDAOImpl();
+		
+		if(!isUserInserted) {
+			userDAO.insertUser(user);
+			isUserInserted = true;
+		}
+		
+		user = userDAO.getUserByUsername(username);
+		
+		
 	}
 
 	@Test
@@ -34,8 +51,9 @@ class AuctionItemDAOImplTest {
 		Timestamp endDate = new Timestamp(new Date().getTime() + 10000);
 		Double startingPrice = 0.1;
 		String photoURL = "/path/to/photo";
-		auctionItem = new AuctionItem(title, description, condition, startDate, endDate, startingPrice, photoURL,
-				false);
+		
+		auctionItem = new AuctionItem( title, description, condition, startDate, endDate, startingPrice, photoURL,
+				false, user);
 
 		assertTrue(dao.insertAuctionItem(auctionItem));
 
@@ -52,7 +70,7 @@ class AuctionItemDAOImplTest {
 		Double startingPrice = 0.1;
 		String photoURL = "/path/to/photo";
 		auctionItem = new AuctionItem(title, description, condition, startDate, endDate, startingPrice, photoURL,
-				false);
+				false, user);
 		dao.insertAuctionItem(auctionItem);
 		List<AuctionItem> result = dao.getAllAuctionItems();
 		assertEquals(beforeResult.size(), result.size() - 1);
