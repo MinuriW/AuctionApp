@@ -28,10 +28,9 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
             <a class="nav-item nav-link pr-5 active" href="#">Home</a>
-            <a class="nav-item nav-link pr-5" href="#">View Bids</a>
-            <a class="nav-item nav-link pr-5" href="#">Track Orders</a>
-           
-            <a class="nav-item nav-link pr-5" href="#">Login</a>
+            <a class="nav-item nav-link pr-5" href="#">My Bids</a>
+            <a class="nav-item nav-link pr-5" href="#">My Items</a>
+            <a class="nav-item nav-link pr-5" href="#">Submit Item</a>
           </div>
           
         <form class="form-inline my-2 my-lg-0">
