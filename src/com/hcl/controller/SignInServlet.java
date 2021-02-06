@@ -54,4 +54,14 @@ public class SignInServlet extends AbstractUserServlet {
 
 	}
 
+
+
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher rd = request.getRequestDispatcher("signin.jsp");
+		rd.forward(request, response);
+	}
+	
+	
+
 }
