@@ -37,7 +37,16 @@ public class AuctionItemServiceImpl implements AuctionItemService {
 		
 		String photoURL = photoManager.savePhoto(photo);
 
-		AuctionItem auctionItem = new AuctionItem(title, description, condition, startDate, endDate, startingPrice, photoURL, false);
+		AuctionItem auctionItem = new AuctionItem(
+				title, 
+				description, 
+				condition, 
+				startDate, 
+				endDate, 
+				startingPrice, 
+				photoURL, 
+				false, 
+				user);
 		
 		return auctionItemDAO.insertAuctionItem(auctionItem);
 
