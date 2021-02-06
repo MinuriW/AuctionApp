@@ -13,6 +13,7 @@ import com.hcl.seller.dao.AuctionItemDAO;
 import com.hcl.seller.dao.AuctionItemDAOImpl;
 import com.hcl.seller.domain.AuctionItem;
 import com.hcl.user.dao.UserDAO;
+import com.hcl.user.dao.UserDAOImpl;
 import com.hcl.user.domain.User;
 
 public class AuctionItemServiceImplTest {
@@ -28,6 +29,7 @@ public class AuctionItemServiceImplTest {
 	@BeforeEach
 	void initDAO() {
 		dao = new AuctionItemDAOImpl();
+		userDAO = new UserDAOImpl();
 		service = new AuctionItemServiceImpl("service");
 		
 		if(!isUserInserted) {
