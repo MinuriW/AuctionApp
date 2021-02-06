@@ -27,10 +27,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link pr-5 active" href="#">Home</a>
-            <a class="nav-item nav-link pr-5" href="#">My Bids</a>
-            <a class="nav-item nav-link pr-5" href="#">My Items</a>
-            <a class="nav-item nav-link pr-5" href="#">Submit Item</a>
+            <a class="nav-item nav-link pr-5 active" href="viewAuctionItems.jsp">Home</a>
+            <a class="nav-item nav-link pr-5" href="publishAuctionItems.jsp">View Bids</a>
+           
+           
+            <a class="nav-item nav-link pr-5" href="#">Log out</a>
           </div>
           
        

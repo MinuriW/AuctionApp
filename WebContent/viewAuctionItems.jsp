@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Online Auction System</title>
+	<title>View Auction Items</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/poppear.js/1.12.9/umd/popper.min.js"></script>
@@ -14,9 +14,26 @@
 	<!--social media icons-->
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 	<link href="style.css" rel="stylesheet">
+	
 </head>
 <body>
-<jsp:include page="nav.jsp"></jsp:include>
+ <nav class="navbar navbar-expand-lg bg-white">
+      
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link pr-5 active" href="viewAuctionItems.jsp">Home</a>
+            <a class="nav-item nav-link pr-5" href="viewBids.jsp">View Bids</a>
+           
+           
+            <a class="nav-item nav-link pr-5" href="login.jsp">Log in</a>
+          </div>
+          
+       
+        </div>
+      </nav>
 
 
 <!--images-->
@@ -49,6 +66,7 @@
 <section class="collection">
 	<div class="container py-5">
 		<h1 class="text-center">Bid Items</h1>
+		
 		<div class="row py-5">
 				<div class="col-lg-3">
 				<div class="card mb-3">

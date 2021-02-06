@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Online Auction System</title>
+	<title>View Auction System</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/poppear.js/1.12.9/umd/popper.min.js"></script>
@@ -16,6 +16,7 @@
 	<link href="style.css" rel="stylesheet">
 </head>
 <body>
+<jsp:include page="nav.jsp"></jsp:include>
 
       <div class="container101">
       
@@ -25,7 +26,7 @@
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="img/biditem4.png" alt="First slide">
+      <img class="d-block w-100" src="img/watch-1.jpg" alt="First slide">
     </div>
     
    
@@ -40,11 +41,11 @@
       </div>
       <div class="col-md-7">
     
-      <h2>Men Sport LED Watch </h2>
-	  <h4>US $1</h4>				
-	  <h4>3 bids </h4>
+      <h2>FASTRACK X ANANYA PANDAY-LEATHER STRAP WATCH</h2>
+	  <h4>US $10</h4>				
+	  <h4>5 bids </h4>
 					
-	<h5>Enter $1.50 or more</h5>
+	<h5>Enter $10.50 or more</h5>
 	<input  type="button"  value=" Place bid">
 	   
     <input type="text" id="bid" name="bid" >
@@ -62,7 +63,7 @@
       
       
       </div>
-
+<jsp:include page="footer.jsp"></jsp:include>
     
 </body>
 </html>

@@ -19,6 +19,14 @@
 <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <script src="js/signup.js"></script>
+
+<style>
+ body{
+  font-family: 'poppins',sans-serif;
+ 
+ }
+
+</style>
 </head>
 <body>
 	<div class="wrapper">

@@ -30,6 +30,11 @@
 <script type="text/javascript" src="js/sellerform.js"></script>
 </head>
 <body>
+
+<jsp:include page="navSeller.jsp"></jsp:include> 
+<br>
+<br>
+<br>
 	<div style="background-image: url('img/heels.jpg')"
 		class="page-wrapper bg-red p-t-180 p-b-100 font-robo">
 		<div class="wrapper wrapper--w960">
@@ -82,7 +87,7 @@
 		</div>
 	</div>
 
-
+<jsp:include page="footer.jsp"></jsp:include> 
 </body>
 </html>
 

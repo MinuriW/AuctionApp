@@ -19,7 +19,20 @@
 <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="js/login.js"></script>
+
+<style>
+ body{
+  font-family: 'poppins',sans-serif;
+ 
+ }
+
+</style>
+
+
 </head>
+
+
+
 <body>
 	<div class="wrapper">
     <div class="container">
