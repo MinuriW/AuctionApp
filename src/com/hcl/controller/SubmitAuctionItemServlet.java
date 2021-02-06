@@ -16,13 +16,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
-import com.hcl.seller.AuctionItemService;
-import com.hcl.seller.AuctionItemServiceImpl;
+import com.hcl.controller.exception.InvalidUserException;
+import com.hcl.seller.service.AuctionItemService;
+import com.hcl.seller.service.AuctionItemServiceImpl;
+import com.hcl.user.domain.User;
+import com.hcl.user.service.UserService;
+import com.hcl.user.service.UserServiceImpl;
 
 @MultipartConfig(fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5)
 @WebServlet("/submitAuctionItem")
 public class SubmitAuctionItemServlet extends AbstractAuctionItemServlet {
-
 
 	private static String getParameterValue(HttpServletRequest request, String paramter)
 			throws IOException, ServletException {
@@ -35,31 +38,48 @@ public class SubmitAuctionItemServlet extends AbstractAuctionItemServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO: Validate User and get user id
+		// TODO: There is a serious problem here!!!
+		// Validate User and find the User
+		User user = null;
+		Boolean isContinueTransaction = true;
+		try {
+			user = getSessionUser(request);
+			
+		} catch (InvalidUserException e) {
+			isContinueTransaction = false;
+		}
 		
-		
-		// Get Form Data From Request
+		if(isContinueTransaction) {
+			// Get Form Data From Request
+			String title = getParameterValue(request, "title");
+			String description = getParameterValue(request, "description");
+			String condition = getParameterValue(request, "condition");
+			Integer timePeriod = Integer.parseInt(getParameterValue(request, "timePeriod"));
+			Double startingPrice = Double.parseDouble(getParameterValue(request, "startingPrice"));
+			InputStream photo = request.getPart("photo").getInputStream();
 
-		String title = getParameterValue(request, "title");
-		String condition = getParameterValue(request, "condition");
-		Integer timePeriod = Integer.parseInt(getParameterValue(request, "timePeriod"));
-		Double startingPrice = Double.parseDouble(getParameterValue(request, "startingPrice"));
-		InputStream photo = request.getPart("photo").getInputStream();
-
-		Boolean isInserted = getAuctionItemService().submitAuctionItem(title, condition, timePeriod, startingPrice,
-				photo);
-		
-		System.out.println(isInserted);
-
-		/*if (isInserted) {
-			// TODO: Send Success Message
-			RequestDispatcher rd = request.getRequestDispatcher("auctionItems.jsp");
-			rd.forward(request, response);
+			Boolean isInserted = getAuctionItemService()
+					.submitAuctionItem(user, title, description, condition, timePeriod, startingPrice,
+					photo);
+			
+			if (isInserted) {
+				// TODO: Send Success Message
+				RequestDispatcher rd = request.getRequestDispatcher("bidder/viewAuctionItems.jsp");
+				rd.forward(request, response);
+			} else {
+				// TODO: Error Message
+				RequestDispatcher rd = request.getRequestDispatcher("seller/submitAuctionItem.jsp");
+				rd.forward(request, response);
+			}
+			
 		} else {
-			// TODO: Error Message
-			RequestDispatcher rd = request.getRequestDispatcher("submitAuctionItem.jsp");
+			// User is not signed in
+			RequestDispatcher rd = request.getRequestDispatcher("signin.jsp");
 			rd.forward(request, response);
-		}*/
+		}
+		
+
+		
 
 	}
 

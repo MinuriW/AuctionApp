@@ -1,20 +1,13 @@
 package com.hcl.controller;
 
-import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
-import com.hcl.seller.AuctionItemService;
-import com.hcl.seller.AuctionItemServiceImpl;
+import com.hcl.seller.service.AuctionItemService;
+import com.hcl.seller.service.AuctionItemServiceImpl;
 
-/**
- * Servlet implementation class AbstractAuctionItemServlet
- */
 @WebServlet("/abstractAuctionItem")
-public abstract class AbstractAuctionItemServlet extends HttpServlet {
+public abstract class AbstractAuctionItemServlet extends AbstractUserServlet {
 	private AuctionItemService auctionItemService;
 
 	@Override
