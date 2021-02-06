@@ -1,57 +1,79 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Search Items</title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>View Auction Items</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/poppear.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<!--social media icons-->
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-	<link href="searchItems.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
 	
- </head>
+</head>
 <body>
-<nav class="navbar navbar-expand-lg bg-white">
+ <nav class="navbar navbar-expand-lg bg-white">
       
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link pr-5 active" href="searchItem.jsp">Home</a>
-            <a class="nav-item nav-link pr-5" href="#">View Bids</a>
-            <a class="nav-item nav-link pr-5" href="#">My Bids</a>
-            
+            <a class="nav-item nav-link pr-5 active" href="viewAuctionItems.jsp">Home</a>
+            <a class="nav-item nav-link pr-5" href="viewBids.jsp">View Bids</a>
            
-            <a class="nav-item nav-link pr-5" href="#">Log out</a>
+           
+            <a class="nav-item nav-link pr-5" href="login.jsp">Log in</a>
           </div>
           
-        <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-     <button  class="btn btn-outline-primary" type="submit">Search</button>
-    </form>
+       
         </div>
       </nav>
-      
+
+
+<!--images-->
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+			<img src="img/slide1.jpg" height="60%">
+			
+		    </div>
+		<div class="carousel-item">
+			<img src="img/slide2.png">
+		</div>
+		<div class="carousel-item">
+			<img src="img/slide3.jpg">
+		</div>
+
+	</div>
+
+
+
+
+</div>
+<hr>
+
+
+<!--- Cards -->
+
+
+
 
 <section class="collection">
 	<div class="container py-5">
 		<h1 class="text-center">Bid Items</h1>
 		
 		<div class="row py-5">
-		
-		
 				<div class="col-lg-3">
 				<div class="card mb-3">
 					<img src= "img/watch-1.jpg"class="img-fluid" alt="">
 					<h5>FASTRACK X ANANYA PANDAY-LEATHER STRAP WATCH</h5>
 				
 					<h5>5 bids </h5>
-					<input type="button" onclick="location.href='viewItem.jsp'" value=" Place bid">
+					<input type="button" onclick="location.href='View Bids.jsp'" value=" Place bid">
 					<p><small><del>$10.05</del><span>$8</span></small></p>
 					<p><small>5d 14h left (Mon, 02:32 AM)</small></p>
 					
@@ -164,10 +186,18 @@
 	
 	
 </section>
-    
+
 
 <jsp:include page="footer.jsp"></jsp:include>
 
 
+
 </body>
 </html>
+
+
+
+
+
+
+

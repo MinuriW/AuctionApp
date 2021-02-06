@@ -19,7 +19,20 @@
 <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="js/login.js"></script>
+
+<style>
+ body{
+  font-family: 'poppins',sans-serif;
+ 
+ }
+
+</style>
+
+
 </head>
+
+
+
 <body>
 	<div class="wrapper">
     <div class="container">
@@ -28,7 +41,7 @@
         <form class="form">
             <input required id="email" type="email" placeholder="Email">
             <input required id="password" type="password" placeholder="Password">
-            <button type="submit" id="signup-button">Login</button>
+            <button type="submit" id="signup-button" onclick="location.href='#''" >Login</button>
         </form>
     </div>
 
