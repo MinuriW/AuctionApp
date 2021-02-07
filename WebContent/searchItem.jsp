@@ -1,3 +1,4 @@
+<%@ include file="includes/validateUser.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>

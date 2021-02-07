@@ -1,6 +1,7 @@
 <%@ page import="java.util.List, com.hcl.seller.domain.AuctionItem"
 	language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ include file="includes/validateUser.jsp"%>	
 
 <!DOCTYPE html>
 <html lang="en">
@@ -55,8 +56,8 @@
 				
 				<!--  		<h5>Enter $10.50 or more</h5> -->
 				<form action="placeBid" method="post">
-					<input type="button" name="amount" value=" Place bid"> <input
-						type="text" id="bid" name="bid"> <input type="hidden"
+					<input type="submit" value=" Place bid"> <input
+						type="text" id="bid" name="amount"> <input type="hidden"
 						name="id" value="<%=i.getId()%>">
 				</form>
 				<p>

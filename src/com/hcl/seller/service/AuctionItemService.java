@@ -24,8 +24,6 @@ public interface AuctionItemService {
 
 	public AuctionItem getAuctionItemById(int Id);
 	
-	public AuctionItem getAuctionItemById(int id);
-	
 }
 
 
