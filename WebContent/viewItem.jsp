@@ -16,7 +16,7 @@
 	<link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<jsp:include page="../includes/nav.jsp"></jsp:include>
+<jsp:include page="includes/nav.jsp"></jsp:include>
 
       <div class="container101">
       
@@ -63,7 +63,7 @@
       
       
       </div>
-<jsp:include page="../includes/footer.jsp"></jsp:include>
+<jsp:include page="includes/footer.jsp"></jsp:include>
     
 </body>
 </html>

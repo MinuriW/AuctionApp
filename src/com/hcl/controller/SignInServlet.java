@@ -42,7 +42,7 @@ public class SignInServlet extends AbstractUserServlet {
 			httpSession.setAttribute("username", username);
 			
 			// set resource path to auctionItems.jsp
-			resourcePath = "bidder/viewAuctionItems.jsp";
+			resourcePath = "viewAuctionItems";
 			
 		}else { // forward to sign in
 			request.setAttribute(SIGNIN_ERROR, true);

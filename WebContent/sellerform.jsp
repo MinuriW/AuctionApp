@@ -31,7 +31,7 @@
 </head>
 <body>
 
-<jsp:include page="../includes/navSeller.jsp"></jsp:include>
+<jsp:include page="includes/navSeller.jsp"></jsp:include>
 <br>
 <br>
 <br>
@@ -87,7 +87,7 @@
 		</div>
 	</div>
 
-<jsp:include page="../includes/footer.jsp"></jsp:include> 
+<jsp:include page="includes/footer.jsp"></jsp:include> 
 </body>
 </html>
 

@@ -44,12 +44,12 @@ public class SubmitAuctionItemServlet extends AbstractAuctionItemServlet {
 		Boolean isContinueTransaction = true;
 		try {
 			user = getSessionUser(request);
-			
+
 		} catch (InvalidUserException e) {
 			isContinueTransaction = false;
 		}
-		
-		if(isContinueTransaction) {
+
+		if (isContinueTransaction) {
 			// Get Form Data From Request
 			String title = getParameterValue(request, "title");
 			String description = getParameterValue(request, "description");
@@ -58,28 +58,32 @@ public class SubmitAuctionItemServlet extends AbstractAuctionItemServlet {
 			Double startingPrice = Double.parseDouble(getParameterValue(request, "startingPrice"));
 			InputStream photo = request.getPart("photo").getInputStream();
 
-			Boolean isInserted = getAuctionItemService()
-					.submitAuctionItem(user, title, description, condition, timePeriod, startingPrice,
-					photo);
-			
+			Boolean isInserted = getAuctionItemService().submitAuctionItem(user, title, description, condition,
+					timePeriod, startingPrice, photo);
+
 			if (isInserted) {
 				// TODO: Send Success Message
-				RequestDispatcher rd = request.getRequestDispatcher("bidder/viewAuctionItems.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("viewAuctionItems");
 				rd.forward(request, response);
 			} else {
 				// TODO: Error Message
-				RequestDispatcher rd = request.getRequestDispatcher("seller/submitAuctionItem.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("submitAuctionItem");
 				rd.forward(request, response);
 			}
-			
+
 		} else {
 			// User is not signed in
-			RequestDispatcher rd = request.getRequestDispatcher("signin.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("signIn");
 			rd.forward(request, response);
 		}
-		
 
-		
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		RequestDispatcher rd = request.getRequestDispatcher("submitAuctionItem.jsp");
+		rd.forward(request, response);
 
 	}
 

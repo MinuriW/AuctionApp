@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.hcl.seller.domain.AuctionItem;
 import com.hcl.seller.service.AuctionItemService;
 
-@WebServlet("/ViewAuctionItems")
+@WebServlet("/viewAuctionItems")
 public class ViewAuctionItemsServlet extends AbstractAuctionItemServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -22,8 +22,13 @@ public class ViewAuctionItemsServlet extends AbstractAuctionItemServlet {
 		List<AuctionItem> items = auctionItemService.getAllAuctionItems();
 		request.setAttribute("itemlist", items);
 
-		RequestDispatcher rd = request.getRequestDispatcher("bidder/viewAuctionItems.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("viewAuctionItems.jsp");
 		rd.forward(request, response);
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
 	}
 
 }
