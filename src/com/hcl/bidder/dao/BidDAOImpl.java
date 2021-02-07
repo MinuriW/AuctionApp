@@ -5,7 +5,8 @@ import com.hcl.bidder.domain.Bid;
 public class BidDAOImpl implements BidDAO {
 
 	@Override
-	public void insertBid(Bid bid) {
+	public Boolean insertBid(Bid bid) {
+		return null;
 	}
 
 }
