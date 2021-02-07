@@ -20,7 +20,7 @@ public class SignoutServlet extends AbstractUserServlet {
 		request.getSession().invalidate();
 		//UserService userService = getUserService();
 		String resourcePath = null;
-		resourcePath = "login.jsp";
+		resourcePath = "signin.jsp";
 
 		RequestDispatcher rd = request.getRequestDispatcher(resourcePath);
 		rd.forward(request, response);
