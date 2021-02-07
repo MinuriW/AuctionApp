@@ -47,11 +47,14 @@
 					
 						<div class="form-group">
 						<h2 class="card-heading">Submit item</h2>
-							    <input required class="form-control" type="text" placeholder="Title"name="title"><br> 
-								<input required class="form-control" type="text" placeholder="Condition" name="condition"><br> 
-								<input required class="form-control" type="text" placeholder="Description" name="itemDescription"><br>
-								<input required class="form-control" type="text" placeholder="Starting price" name="startingPrice"> <br>
-								<input required class="form-control" type="text" placeholder="Auction time" name="timePeriod">
+							    <input required class="form-control" type="text" placeholder="Title" name="title" onchange="validateTitle()" ><br> 
+							    <input required class="form-control" type="text" placeholder="Description" name="description"><br>
+								<input required class="form-control" type="text" placeholder="Condition" name="condition" onchange="validateCondition()"><br> 
+								<input required class="form-control" type="text" placeholder="Auction time" name="timePeriod" onchange="validateTimePeriod()"><br>
+								<input required class="form-control" type="text" placeholder="Starting price" name="startingPrice" onchange="validateStartingPrice()"> <br>
+								
+								
+								
 						</div>
 
 
@@ -61,9 +64,11 @@
 							<div class="row">
 								<div class="col-sm-2 imgUp">
 									<div class="imagePreview"></div>
-									<label class="btn btn-primary"> Upload<input
-										type="file" class="uploadFile img" value="Upload Photo"
-										style="width: 0px; height: 0px; overflow: hidden;">
+									<label class="btn btn-primary"> Upload
+									<input name="photo" type="file" onchange="validatePhoto()" class="uploadFile img" value="Upload Photo" style="width: 0px; height: 0px; ">
+										
+										
+										
 									</label>
 								</div>
 
@@ -81,6 +86,9 @@
 						<div class="p-t-30">
 							<button class="btn btn--radius btn--green" type="submit">Submit
 								Item</button>
+								
+								
+								
 						</div>
 					</form>
 				</div>
