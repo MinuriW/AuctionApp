@@ -28,23 +28,35 @@ public class Bid {
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "auction_user_id")
 	private User user;
+	@Column
+	private double amount;
 
 	public Bid() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Bid(AuctionItem auctionItem, User user) {
+	public Bid(AuctionItem auctionItem, User user, double amount) {
 		super();
 		this.auctionItem = auctionItem;
 		this.user = user;
+		this.amount = amount;
 	}
 
-	public Bid(int id, AuctionItem auctionItem, User user) {
+	public Bid(int id, AuctionItem auctionItem, User user, double amount) {
 		super();
 		this.id = id;
 		this.auctionItem = auctionItem;
 		this.user = user;
+		this.amount = amount;
+	}
+
+	public double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(double amount) {
+		this.amount = amount;
 	}
 
 	public int getId() {
