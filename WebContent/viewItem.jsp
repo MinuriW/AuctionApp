@@ -1,6 +1,7 @@
 <%@ page import="java.util.List, com.hcl.seller.domain.AuctionItem"
 	language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ include file="includes/validateUser.jsp"%>	
 
 <!DOCTYPE html>
 <html lang="en">
