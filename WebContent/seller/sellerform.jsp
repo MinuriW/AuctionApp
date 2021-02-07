@@ -26,7 +26,7 @@
 
 <!-- Main JS-->
 
-<link href="../css/formstyle.css" rel="stylesheet">
+<link href="css/formstyle.css" rel="stylesheet">
 <script type="text/javascript" src="js/sellerform.js"></script>
 </head>
 <body>

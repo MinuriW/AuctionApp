@@ -13,7 +13,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<!--social media icons-->
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-	<link href="../css/style.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
 	
 </head>
 <body>
@@ -24,11 +24,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link pr-5 active" href="viewAuctionItems.jsp">Home</a>
-            <a class="nav-item nav-link pr-5" href="viewBids.jsp">View Bids</a>
-           
-           
-            <a class="nav-item nav-link pr-5" href="signin.jsp">Log in</a>
+            <a class="nav-item nav-link pr-5 active" href="ViewAuctionItems">Home</a>
+            <a class="nav-item nav-link pr-5 active" href="#">My Bids</a>
+            <a class="nav-item nav-link pr-5" href="#">My Items</a>
+            <a class="nav-item nav-link pr-5" href="#">Pending Items</a>
+            <a class="nav-item nav-link pr-5" href="#">Submit Item</a>
+            <a class="nav-item nav-link pr-5" href="#">Sign out</a>
           </div>
           
        
