@@ -1,6 +1,7 @@
 package com.hcl.seller.domain;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,9 +11,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.hcl.bidder.domain.Bid;
 import com.hcl.user.domain.User;
 
 @Entity
@@ -41,6 +44,8 @@ public class AuctionItem {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(nullable = false, name = "auction_user_id")
 	private User user;
+	@OneToMany(mappedBy = "auctionItem", fetch = FetchType.EAGER)
+	private List<Bid> bids;
 
 	public AuctionItem(String title, String condition, String description, Timestamp startDate, Timestamp endDate,
 			Double startingPrice, String photoURL, boolean isPublished, User user) {
@@ -57,7 +62,7 @@ public class AuctionItem {
 	}
 
 	public AuctionItem(int id, String title, String condition, String description, Timestamp startDate,
-			Timestamp endDate, Double startingPrice, String photoURL, boolean isPublished, User user) {
+			Timestamp endDate, Double startingPrice, String photoURL, boolean isPublished, User user, List<Bid> bids) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -69,6 +74,30 @@ public class AuctionItem {
 		this.photoURL = photoURL;
 		this.isPublished = isPublished;
 		this.user = user;
+		this.bids = bids;
+	}
+
+	public AuctionItem(String title, String condition, String description, Timestamp startDate, Timestamp endDate,
+			Double startingPrice, String photoURL, boolean isPublished, User user, List<Bid> bids) {
+		super();
+		this.title = title;
+		this.condition = condition;
+		this.description = description;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.startingPrice = startingPrice;
+		this.photoURL = photoURL;
+		this.isPublished = isPublished;
+		this.user = user;
+		this.bids = bids;
+	}
+
+	public List<Bid> getBids() {
+		return bids;
+	}
+
+	public void setBids(List<Bid> bids) {
+		this.bids = bids;
 	}
 
 	public int getId() {
