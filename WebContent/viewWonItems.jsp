@@ -32,7 +32,7 @@
 </head>
 <body>
 
-<jsp:include page="../includes/nav.jsp"></jsp:include>
+<jsp:include page="includes/nav.jsp"></jsp:include>
 <section class="collection">
 	<div class="container py-5">
 		<h1 class="text-center">Won Items</h1>
@@ -99,7 +99,7 @@
 </section>
 
 
-<jsp:include page="../includes/footer.jsp"></jsp:include>
+<jsp:include page="includes/footer.jsp"></jsp:include>
 
 
 </body>

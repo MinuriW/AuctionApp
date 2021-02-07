@@ -18,7 +18,7 @@
 </head>
 <body>
 
-<jsp:include page="../includes/nav.jsp"></jsp:include>
+<jsp:include page="includes/nav.jsp"></jsp:include>
 
 <section class="collection">
 <h1>My Bids</h1>
@@ -144,7 +144,7 @@
 	</div>
 	
 </section>
-<jsp:include page="../includes/footer.jsp"></jsp:include>
+<jsp:include page="includes/footer.jsp"></jsp:include>
 
 </body>
 </html>
