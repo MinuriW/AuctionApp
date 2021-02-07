@@ -24,7 +24,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link pr-5 active" href="ViewAuctionItems">Home</a>
+            <a class="nav-item nav-link pr-5 active" href="viewAuctionItems">Home</a>
             <a class="nav-item nav-link pr-5 active" href="#">My Bids</a>
             <a class="nav-item nav-link pr-5" href="#">My Items</a>
             <a class="nav-item nav-link pr-5" href="#">Pending Items</a>
