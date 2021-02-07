@@ -1,3 +1,4 @@
+<%@page import="com.hcl.controller.notification.Notification"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -37,7 +38,16 @@
 	<div class="wrapper">
     <div class="container">
         <h1>Sign in</h1>
-
+		<%
+			Notification error = (Notification) request.getAttribute("ERROR");
+				
+			if(error != null) {
+		%>
+				<div style="color: red;"><%=error.getMessage() %></div>
+		<%
+			}
+		%>	
+		
         <form class="form" action="signIn" method="post">
             <input required id="username" name="username" type="text" placeholder="Username">
             <input required id="password" name="password" type="password" placeholder="Password">

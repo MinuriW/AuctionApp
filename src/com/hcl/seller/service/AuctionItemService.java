@@ -21,6 +21,8 @@ public interface AuctionItemService {
 	public List<AuctionItem> getAllAuctionItems();
 	
 	public List<AuctionItem> getAllSubmittedItems(User user);
+
+	public AuctionItem getAuctionItemById(int Id);
 	
 	public AuctionItem getAuctionItemById(int id);
 	
