@@ -59,63 +59,39 @@
 
 	</div>
 
-
-
-
-	</div>
 	<hr>
 
 
 	<!--- Cards -->
 
 
-
-
+<% List<AuctionItem> auctionItems = (List<AuctionItem>) request.getAttribute("itemlist"); %>
 	<section class="collection">
 		<div class="container py-5">
 			<h1 class="text-center">Bid Items</h1>
-
 			<div class="row py-5">
-
-				<% List<AuctionItem> auctionItems = (List<AuctionItem>) request.getAttribute("itemlist"); %>
-
-				<% if(auctionItems != null){ %>
-
-				<% for(AuctionItem a : auctionItems) { %>
-
-
-				<div>
-				<a href="viewAuctionItem?id=<%=a.getId() %>">
-
-				<div class="col-lg-3">
-					<div class="card mb-3">
-						<img src="<%=a.getPhotoURL()%>" class="img-fluid" alt="">
-						<h5><%=a.getTitle() %></h5>
-
-						<h5>5 bids</h5>
-						<input type="button" onclick="location.href='View Bids.jsp'"
-							value=" Place bid">
-						<p>
-							<small><span>$<%=a.getStartingPrice()%></span></small>
-						</p>
-						<p>
-							<small><%=a.getEndDate() %></small>
-						</p>
-
-					</div>
-				</div>
-				</a>
-				<% } %>
-				<% } else { %>
-				<div>List is null</div>
-
-				<% } %>
+			
+					<!-- Loop Starts -->
+				<% if(auctionItems != null){ // if starts %>
+					<% for(AuctionItem a : auctionItems) { // for starts %>
+						<!--  <a href='<%= "viewAuctionItem?id=" + a.getId()%>'>-->
+							<div class="col-lg-3">
+								<div class="card mb-3">
+									<img src="<%=a.getPhotoURL()%>" class="img-fluid" alt="<%=a.getDescription()%>">
+									<h5><%=a.getTitle()%></h5>
+							
+									<h5><%=a.getBids() == null? "0" : "" + a.getBids().size() %> bids </h5>
+									<input type="button" onclick="location.href='<%="viewAuctionItem?id=" + a.getId()%>'" value=" Place bid">
+									<p><small><span>$<%=a.getStartingPrice() %></span></small></p>
+									<p><small><%=a.getEndDate() %></small></p>
+								</div>
+							</div>
+					<!-- Loop Ends -->
+						<!--  </a>-->
+					<% } // for ends %>
+				<% } // if ends %>
 			</div>
 		</div>
-
-
-
-
 	</section>
 
 
