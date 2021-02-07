@@ -22,11 +22,9 @@
 <script type="text/javascript" src="js/login.js"></script>
 
 <style>
- body{
-  font-family: 'poppins',sans-serif;
- 
- }
-
+body {
+	font-family: 'poppins', sans-serif;
+}
 </style>
 
 
@@ -36,38 +34,46 @@
 
 <body>
 	<div class="wrapper">
-    <div class="container">
-        <h1>Sign in</h1>
-		<%
+		<div class="container">
+			
+			<%
 			Notification error = (Notification) request.getAttribute("ERROR");
 				
 			if(error != null) {
 		%>
-				<div style="color: red;"><%=error.getMessage() %></div>
-		<%
+			
+			<div id="warning"
+				class="alert alert-warning alert-dismissible fade in">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<strong><%=error.getMessage() %></strong> 
+				
+			</div>
+			
+			<%
 			}
-		%>	
-		
-        <form class="form" action="signIn" method="post">
-            <input required id="username" name="username" type="text" placeholder="Username">
-            <input required id="password" name="password" type="password" placeholder="Password">
-            <button type="submit" id="signup-button">Sign in</button>
-        </form>
-    </div>
+		%>
+		<h1>Sign in</h1>
+			<form class="form" action="signIn" method="post">
+				<input required id="username" name="username" type="text"
+					placeholder="Username"> <input required id="password"
+					name="password" type="password" placeholder="Password">
+				<button type="submit" id="signup-button">Sign in</button>
+			</form>
+		</div>
 
-    <ul class="bg-bubbles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-</div>
+		<ul class="bg-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
 
 </body>
 </html>
