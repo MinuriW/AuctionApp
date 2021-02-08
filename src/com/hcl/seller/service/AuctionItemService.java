@@ -23,6 +23,8 @@ public interface AuctionItemService {
 	public List<AuctionItem> getAllSubmittedItems(User user);
 
 	public AuctionItem getAuctionItemById(int Id);
+
+	public Boolean updateHighestBid(AuctionItem auctionItem);
 	
 }
 

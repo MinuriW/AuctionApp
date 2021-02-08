@@ -68,4 +68,10 @@ public class AuctionItemServiceImpl implements AuctionItemService {
 		return auctionItemDAO.getAuctionItemById(id);
 	}
 
+	@Override
+	public Boolean updateHighestBid(AuctionItem auctionItem) {
+		
+		return auctionItemDAO.updateAuctionItem(auctionItem);
+	}
+
 }
