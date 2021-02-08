@@ -81,4 +81,28 @@ public class AuctionItemDAOImpl implements AuctionItemDAO {
         return null;
 	}
 
+	@Override
+	public Boolean updateAuctionItem(AuctionItem auctionItem) {
+
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+
+		Boolean isUpdated = true;
+
+		try {
+			session.update(auctionItem);
+		} catch (HibernateException e) {
+			try {
+				session.merge(auctionItem);
+			} catch (HibernateException e2) {
+				isUpdated = false;
+			}
+		}
+
+		session.getTransaction().commit();
+
+		return isUpdated;
+	}
+
 }

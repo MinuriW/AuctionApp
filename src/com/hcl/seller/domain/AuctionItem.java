@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -44,6 +45,9 @@ public class AuctionItem {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(nullable = false, name = "auction_user_id")
 	private User user;
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(nullable = true, name = "highest_bid_id")
+	private Bid highestBid;
 	@OneToMany(mappedBy = "auctionItem", fetch = FetchType.EAGER)
 	private List<Bid> bids;
 
@@ -62,7 +66,8 @@ public class AuctionItem {
 	}
 
 	public AuctionItem(int id, String title, String condition, String description, Timestamp startDate,
-			Timestamp endDate, Double startingPrice, String photoURL, boolean isPublished, User user, List<Bid> bids) {
+			Timestamp endDate, Double startingPrice, String photoURL, boolean isPublished, User user, Bid highestBid,
+			List<Bid> bids) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -74,22 +79,16 @@ public class AuctionItem {
 		this.photoURL = photoURL;
 		this.isPublished = isPublished;
 		this.user = user;
+		this.highestBid = highestBid;
 		this.bids = bids;
 	}
 
-	public AuctionItem(String title, String condition, String description, Timestamp startDate, Timestamp endDate,
-			Double startingPrice, String photoURL, boolean isPublished, User user, List<Bid> bids) {
-		super();
-		this.title = title;
-		this.condition = condition;
-		this.description = description;
-		this.startDate = startDate;
-		this.endDate = endDate;
-		this.startingPrice = startingPrice;
-		this.photoURL = photoURL;
-		this.isPublished = isPublished;
-		this.user = user;
-		this.bids = bids;
+	public Bid getHighestBid() {
+		return highestBid;
+	}
+
+	public void setHighestBid(Bid highestBid) {
+		this.highestBid = highestBid;
 	}
 
 	public List<Bid> getBids() {

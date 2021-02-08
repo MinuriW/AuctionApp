@@ -13,4 +13,6 @@ public interface AuctionItemDAO {
 	public List<AuctionItem> getAllAuctionItems();
 	
 	public List<AuctionItem> getAllSubmittedItems(User user);
+
+	public Boolean updateAuctionItem(AuctionItem auctionItem);
 }
