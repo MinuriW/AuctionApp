@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.hcl.bidder.domain.Bid;
 import com.hcl.bidder.service.BidderService;
 import com.hcl.bidder.service.BidderServiceImpl;
 import com.hcl.controller.exception.InvalidUserException;
@@ -57,13 +58,30 @@ public class PlaceBidServlet extends AbstractAuctionItemServlet {
 			AuctionItem auctionItem = getAuctionItemService().getAuctionItemById(auctionItemId);
 			
 			// place a bid on the item
-			Boolean isPlaced = getBidderService().placeBid(user, auctionItem, bidAmount);
+			Bid bid = getBidderService().placeBid(user, auctionItem, bidAmount);
 			
-			if(isPlaced != null && isPlaced) {
-				RequestDispatcher rd = request.getRequestDispatcher("viewAuctionItem");
-				request.setAttribute("NOTIFICATION", Notification.SUCCESSFULL_BID);
+			if(bid != null) {
+				auctionItem.setHighestBid(bid);
+				Boolean isUpdated = getAuctionItemService().updateHighestBid(auctionItem);
 				
-				rd.forward(request, response);
+				if(isUpdated != null && isUpdated) {
+					RequestDispatcher rd = request.getRequestDispatcher("viewAuctionItem");
+					request.setAttribute("NOTIFICATION", Notification.SUCCESSFULL_BID);
+					
+					rd.forward(request, response);
+				} else {
+					Boolean isCancelled = getBidderService().cancelBid(bid);
+					
+					if(isCancelled != null && isCancelled) {
+						RequestDispatcher rd = request.getRequestDispatcher("viewAuctionItem");
+						request.setAttribute("NOTIFICATION", Notification.UNSUCCESSFULL_BID);
+						
+						rd.forward(request, response);
+					} else {
+						// TODO: Log system error
+						System.out.println("Error: Bid is not cancelled.");
+					}
+				}
 			} else {
 				RequestDispatcher rd = request.getRequestDispatcher("viewAuctionItem");
 				request.setAttribute("NOTIFICATION", Notification.UNSUCCESSFULL_BID);
