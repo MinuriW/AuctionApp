@@ -19,24 +19,20 @@ import com.hcl.user.domain.User;
 
 @WebServlet("/placeBid")
 public class PlaceBidServlet extends AbstractAuctionItemServlet {
-	
+
 	private BidderService bidderService;
-	
+
 	public BidderService getBidderService() {
 		return bidderService;
 	}
-	
-	
 
 	@Override
 	public void init() throws ServletException {
 		// TODO Auto-generated method stub
 		super.init();
-		
+
 		bidderService = new BidderServiceImpl();
 	}
-
-
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -53,29 +49,29 @@ public class PlaceBidServlet extends AbstractAuctionItemServlet {
 		if (isContinueTransaction) {
 			int auctionItemId = Integer.parseInt(request.getParameter("id"));
 			double bidAmount = Double.parseDouble(request.getParameter("amount"));
-			
+
 			// find the item
 			AuctionItem auctionItem = getAuctionItemService().getAuctionItemById(auctionItemId);
-			
+
 			// place a bid on the item
 			Bid bid = getBidderService().placeBid(user, auctionItem, bidAmount);
-			
-			if(bid != null) {
+
+			if (bid != null) {
 				auctionItem.setHighestBid(bid);
 				Boolean isUpdated = getAuctionItemService().updateHighestBid(auctionItem);
-				
-				if(isUpdated != null && isUpdated) {
+
+				if (isUpdated != null && isUpdated) {
 					RequestDispatcher rd = request.getRequestDispatcher("viewAuctionItem");
 					request.setAttribute("NOTIFICATION", Notification.SUCCESSFULL_BID);
-					
+
 					rd.forward(request, response);
 				} else {
 					Boolean isCancelled = getBidderService().cancelBid(bid);
-					
-					if(isCancelled != null && isCancelled) {
+
+					if (isCancelled != null && isCancelled) {
 						RequestDispatcher rd = request.getRequestDispatcher("viewAuctionItem");
 						request.setAttribute("NOTIFICATION", Notification.UNSUCCESSFULL_BID);
-						
+
 						rd.forward(request, response);
 					} else {
 						// TODO: Log system error
@@ -85,14 +81,14 @@ public class PlaceBidServlet extends AbstractAuctionItemServlet {
 			} else {
 				RequestDispatcher rd = request.getRequestDispatcher("viewAuctionItem");
 				request.setAttribute("NOTIFICATION", Notification.UNSUCCESSFULL_BID);
-				
+
 				rd.forward(request, response);
 			}
-			
+
 		} else {
 			RequestDispatcher rd = request.getRequestDispatcher("signIn");
 			request.setAttribute("ERROR", Notification.INVALID_USER);
-			
+
 			rd.forward(request, response);
 		}
 

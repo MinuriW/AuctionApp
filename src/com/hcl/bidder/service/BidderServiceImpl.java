@@ -35,7 +35,6 @@ public class BidderServiceImpl implements BidderService {
 
 	@Override
 	public Boolean cancelBid(Bid bid) {
-		// TODO Auto-generated method stub
 		return bidDAO.deleteBid(bid);
 	}
 
