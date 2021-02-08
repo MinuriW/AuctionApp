@@ -16,9 +16,27 @@ public class BidderServiceImpl implements BidderService {
 	}
 
 	@Override
-	public Boolean placeBid(User user, AuctionItem auctionItem, double amount) {
-		Bid bid = new Bid(auctionItem, user, amount);
-		return bidDAO.insertBid(bid);
+	public Bid placeBid(User user, AuctionItem auctionItem, double amount) {
+		
+		Bid currentBid = auctionItem.getHighestBid();
+		
+		Bid bid = null;
+		Bid insertedBid = null;
+		if(currentBid == null) {
+			bid = new Bid(auctionItem, user, amount);
+			insertedBid = bidDAO.insertBid(bid);
+		} else if (amount > currentBid.getAmount()) {
+			bid = new Bid(auctionItem, user, amount);
+			insertedBid = bidDAO.insertBid(bid);
+		}
+		
+		return insertedBid;
+	}
+
+	@Override
+	public Boolean cancelBid(Bid bid) {
+		// TODO Auto-generated method stub
+		return bidDAO.deleteBid(bid);
 	}
 
 }
