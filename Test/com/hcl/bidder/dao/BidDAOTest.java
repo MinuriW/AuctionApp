@@ -57,9 +57,9 @@ class BidDAOTest {
 	void testInsertBid() {
 		Bid bid = new  Bid(auctionItem, user, 15001.0);
 		
-		Boolean isInserted = bidDAO.insertBid(bid);
+		Bid insertedBid = bidDAO.insertBid(bid);
 		
-		assertTrue(isInserted);
+		assertNotNull(insertedBid);
 	}
 
 }
