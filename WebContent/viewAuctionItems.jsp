@@ -22,26 +22,7 @@
 
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg bg-white">
-
-		<button class="navbar-toggler" type="button" data-toggle="collapse"
-			data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
-			aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-			<div class="navbar-nav ml-auto">
-				<a class="nav-item nav-link pr-5 active" href="viewAuctionItems">Home</a>
-				<a class="nav-item nav-link pr-5 active" href="#">My Bids</a> <a
-					class="nav-item nav-link pr-5" href="#">My Items</a> <a
-					class="nav-item nav-link pr-5" href="#">Pending Items</a> <a
-					class="nav-item nav-link pr-5" href="submitAuctionItem">Submit
-					Item</a> <a class="nav-item nav-link pr-5" href="signout">Sign out</a>
-			</div>
-
-
-		</div>
-	</nav>
+	<jsp:include page="includes/nav.jsp"></jsp:include>
 
 
 	<!--images-->
@@ -82,7 +63,8 @@
 							
 									<h5><%=a.getBids() == null? "0" : "" + a.getBids().size() %> bids </h5>
 									<input type="button" onclick="location.href='<%="viewAuctionItem?id=" + a.getId()%>'" value=" Place bid">
-									<p><small><span>$<%=a.getStartingPrice() %></span></small></p>
+									<p><small><span>Starting Price: $<%=a.getStartingPrice()%></span></small></p>
+									<p><small><span>Current Bid: $<%=a.getHighestBid() == null ? "No Bids" : "" + a.getHighestBid().getAmount()%></span></small></p>
 									<p><small><%=a.getEndDate() %></small></p>
 								</div>
 							</div>

@@ -41,6 +41,9 @@
             <input required type="password" name="password" placeholder="Password">
             <button type="submit" id="signup-button">Signup</button>
         </form>
+        <!-- <a href="signIn" class="stretched-link">Already Signed up? Sign In</a> -->
+        <!-- <button type="button" class="btn btn-outline-primary" onclick="location.href=''"></button> -->
+        
     </div>
 
     <ul class="bg-bubbles">

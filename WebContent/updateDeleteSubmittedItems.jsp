@@ -17,7 +17,7 @@
 
 <body>
 
-<jsp:include page="includes/navSeller.jsp"></jsp:include>
+<jsp:include page="includes/nav.jsp"></jsp:include>
 
 <!--- Cards -->
 

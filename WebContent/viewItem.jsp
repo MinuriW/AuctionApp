@@ -50,7 +50,8 @@
 			<div class="col-md-7">
 
 				<h2><%=i.getTitle()%></h2>
-				<h4>Price: <%=i.getStartingPrice()%></h4>
+				<h4>Starting Price: <%=i.getStartingPrice()%></h4>
+				<h4>Current Bid: <%=i.getHighestBid() == null ? "No Bids" : "" + i.getHighestBid().getAmount()%></h4>
 				<h5>Condition: <%=i.getDescription() %></h5>
 				<p>Description: <%=i.getCondition() %></p>
 				

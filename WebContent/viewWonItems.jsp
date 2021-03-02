@@ -51,7 +51,7 @@
 					<p><small><del>$2.05</del><span>$1</span></small></p>
 					<p><small>4d 14h left (Mon, 02:32 AM)</small></p>
 					
-				
+				<a href="checkout.jsp"><button type="button" class="btn btn-outline-primary">Buy Item</button></a>
 				</div>
 			</div>
 
@@ -64,7 +64,7 @@
 					
 					<p><small><del>$2.05</del><span>$1</span></small></p>
 					<p><small>4d 14h left (Mon, 02:32 AM)</small></p>
-					
+					<a href="checkout.jsp"><button type="button" class="btn btn-outline-primary">Buy Item</button></a>
 				</div>
 			</div>
 
@@ -77,7 +77,7 @@
 					
 					<p><small><del>$5.05</del><span>$3</span></small></p>
 					<p><small>1d 14h left (Mon, 02:32 AM)</small></p>
-					
+					<a href="checkout.jsp"><button type="button" class="btn btn-outline-primary">Buy Item</button></a>
 					
 				</div>
 			</div>
@@ -90,6 +90,7 @@
 					
 					<p><small><del>$2.05</del><span>$1</span></small></p>
 					<p><small>4d 14h left (Mon, 02:32 AM)</small></p>
+					<a href="checkout.jsp"><button type="button" class="btn btn-outline-primary">Buy Item</button></a>
 					
 				</div>
 			</div>
